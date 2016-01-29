@@ -38,6 +38,11 @@ namespace Rituals.Physics.Systems
             this.Player.transform.position += args.Direction * Time.deltaTime * this.Speed;
         }
 
+        private void Update()
+        {
+            this.Player.transform.rotation = Quaternion.identity;
+        }
+
         #endregion
     }
 }
