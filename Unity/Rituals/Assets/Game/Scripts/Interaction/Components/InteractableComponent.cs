@@ -1,14 +1,14 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="InteractionInputEventArgs.cs" company="Slash Games">
+// <copyright file="InteractableComponent.cs" company="Slash Games">
 //   Copyright (c) Slash Games. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Rituals.Input.Events
+namespace Rituals.Interaction.Components
 {
-    using System;
+    using UnityEngine;
 
-    public class InteractionInputEventArgs : EventArgs
+    public class InteractableComponent : MonoBehaviour
     {
     }
 }

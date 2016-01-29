@@ -1,14 +1,23 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="InteractionInputEventArgs.cs" company="Slash Games">
+// <copyright file="CollisionEventArgs.cs" company="Slash Games">
 //   Copyright (c) Slash Games. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Rituals.Input.Events
+namespace Rituals.Physics.Events
 {
     using System;
 
-    public class InteractionInputEventArgs : EventArgs
+    using UnityEngine;
+
+    public class CollisionEventArgs : EventArgs
     {
+        #region Fields
+
+        public Collider First;
+
+        public Collider Second;
+
+        #endregion
     }
 }

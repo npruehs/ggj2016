@@ -6,14 +6,20 @@
 
 namespace Rituals.Interaction.Systems
 {
-    using System;
-    using System.Diagnostics;
-
     using Rituals.Core;
     using Rituals.Input.Events;
+    using Rituals.Physics.Events;
+
+    using UnityEngine;
 
     public class InteractionSystem : RitualsBehaviour
     {
+        #region Fields
+
+        public Collider PlayerInteractionCollider;
+
+        #endregion
+
         #region Methods
 
         protected override void AddListeners()
@@ -21,6 +27,8 @@ namespace Rituals.Interaction.Systems
             base.AddListeners();
 
             this.EventManager.InteractionInput += this.OnInteractionInput;
+            this.EventManager.CollisionEntered += this.OnCollisionEntered;
+            this.EventManager.CollisionExited += this.OnCollisionExited;
         }
 
         protected override void RemoveListeners()
@@ -28,11 +36,33 @@ namespace Rituals.Interaction.Systems
             base.RemoveListeners();
 
             this.EventManager.InteractionInput -= this.OnInteractionInput;
+            this.EventManager.CollisionEntered -= this.OnCollisionEntered;
+            this.EventManager.CollisionExited -= this.OnCollisionExited;
+        }
+
+        private void OnCollisionEntered(object sender, CollisionEventArgs args)
+        {
+            if (args.First.gameObject.tag != "Player")
+            {
+                return;
+            }
+
+            Debug.Log("Enter " + args.Second);
+        }
+
+        private void OnCollisionExited(object sender, CollisionEventArgs args)
+        {
+            if (args.First.gameObject.tag != "Player")
+            {
+                return;
+            }
+
+            Debug.Log("Exit " + args.Second);
         }
 
         private void OnInteractionInput(object sender, InteractionInputEventArgs args)
         {
-            UnityEngine.Debug.Log("E");
+            Debug.Log("E");
         }
 
         #endregion

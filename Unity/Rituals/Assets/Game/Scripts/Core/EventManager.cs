@@ -7,12 +7,17 @@
 namespace Rituals.Core
 {
     using Rituals.Input.Events;
+    using Rituals.Physics.Events;
 
     using UnityEngine;
 
     public class EventManager : MonoBehaviour
     {
         #region Delegates
+
+        public delegate void CollisionEnteredDelegate(object sender, CollisionEventArgs args);
+
+        public delegate void CollisionExitedDelegate(object sender, CollisionEventArgs args);
 
         public delegate void InteractionInputDelegate(object sender, InteractionInputEventArgs args);
 
@@ -30,9 +35,31 @@ namespace Rituals.Core
 
         public event InteractionInputDelegate InteractionInput;
 
+        public event CollisionEnteredDelegate CollisionEntered;
+
+        public event CollisionExitedDelegate CollisionExited;
+
         #endregion
 
         #region Public Methods and Operators
+
+        public void OnCollisionEntered(object sender, CollisionEventArgs args)
+        {
+            var handler = this.CollisionEntered;
+            if (handler != null)
+            {
+                handler(sender, args);
+            }
+        }
+
+        public void OnCollisionExited(object sender, CollisionEventArgs args)
+        {
+            var handler = this.CollisionExited;
+            if (handler != null)
+            {
+                handler(sender, args);
+            }
+        }
 
         public void OnInteractionInput(object sender, InteractionInputEventArgs args)
         {
