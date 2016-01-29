@@ -14,21 +14,34 @@ namespace Rituals.Core
     {
         #region Delegates
 
-        public delegate void MovePlayerDelegate(object sender, MovePlayerEventArgs args);
+        public delegate void LookDirectionInputDelegate(object sender, LookDirectionInputEventArgs args);
+
+        public delegate void MovementInputDelegate(object sender, MovementInputEventArgs args);
 
         #endregion
 
         #region Events
 
-        public event MovePlayerDelegate MovePlayer;
+        public event MovementInputDelegate MovementInput;
+
+        public event LookDirectionInputDelegate LookDirectionInput;
 
         #endregion
 
         #region Public Methods and Operators
 
-        public void OnApplyForce(object sender, MovePlayerEventArgs args)
+        public void OnLookDirectionInput(object sender, LookDirectionInputEventArgs args)
         {
-            var handler = this.MovePlayer;
+            var handler = this.LookDirectionInput;
+            if (handler != null)
+            {
+                handler(sender, args);
+            }
+        }
+
+        public void OnMovementInput(object sender, MovementInputEventArgs args)
+        {
+            var handler = this.MovementInput;
             if (handler != null)
             {
                 handler(sender, args);

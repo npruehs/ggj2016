@@ -19,19 +19,19 @@ namespace Rituals.Input.Systems
         {
             if (Input.GetKey(KeyCode.W))
             {
-                this.EventManager.OnApplyForce(this, new MovePlayerEventArgs { Direction = Vector3.forward });
+                this.EventManager.OnMovementInput(this, new MovementInputEventArgs { Direction = Vector3.forward });
             }
             if (Input.GetKey(KeyCode.S))
             {
-                this.EventManager.OnApplyForce(this, new MovePlayerEventArgs { Direction = Vector3.back });
+                this.EventManager.OnMovementInput(this, new MovementInputEventArgs { Direction = Vector3.back });
             }
             if (Input.GetKey(KeyCode.A))
             {
-                this.EventManager.OnApplyForce(this, new MovePlayerEventArgs { Direction = Vector3.left });
+                this.EventManager.OnMovementInput(this, new MovementInputEventArgs { Direction = Vector3.left });
             }
             if (Input.GetKey(KeyCode.D))
             {
-                this.EventManager.OnApplyForce(this, new MovePlayerEventArgs { Direction = Vector3.right });
+                this.EventManager.OnMovementInput(this, new MovementInputEventArgs { Direction = Vector3.right });
             }
         }
 

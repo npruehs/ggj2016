@@ -1,18 +1,20 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="ApplyForceEventArgs.cs" company="Slash Games">
+// <copyright file="LookDirectionInputEventArgs.cs" company="Slash Games">
 //   Copyright (c) Slash Games. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
 namespace Rituals.Physics.Events
 {
+    using System;
+
     using UnityEngine;
 
-    public class MovePlayerEventArgs
+    public class LookDirectionInputEventArgs : EventArgs
     {
         #region Fields
 
-        public Vector3 Direction;
+        public Vector3 Delta;
 
         #endregion
     }

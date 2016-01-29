@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="PlayerPhysicsSystem.cs" company="Slash Games">
+// <copyright file="PlayerMovementSystem.cs" company="Slash Games">
 //   Copyright (c) Slash Games. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
@@ -11,7 +11,7 @@ namespace Rituals.Physics.Systems
 
     using UnityEngine;
 
-    public class PlayerPhysicsSystem : RitualsBehaviour
+    public class PlayerMovementSystem : RitualsBehaviour
     {
         #region Fields
 
@@ -25,15 +25,19 @@ namespace Rituals.Physics.Systems
 
         protected override void AddListeners()
         {
-            this.EventManager.MovePlayer += this.OnMovePlayer;
+            base.AddListeners();
+
+            this.EventManager.MovementInput += this.OnMovementInput;
         }
 
         protected override void RemoveListeners()
         {
-            this.EventManager.MovePlayer -= this.OnMovePlayer;
+            base.RemoveListeners();
+
+            this.EventManager.MovementInput -= this.OnMovementInput;
         }
 
-        private void OnMovePlayer(object sender, MovePlayerEventArgs args)
+        private void OnMovementInput(object sender, MovementInputEventArgs args)
         {
             this.Player.transform.position += args.Direction * Time.deltaTime * this.Speed;
         }
