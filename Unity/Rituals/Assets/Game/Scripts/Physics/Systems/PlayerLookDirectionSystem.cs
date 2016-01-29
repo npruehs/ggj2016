@@ -17,6 +17,8 @@ namespace Rituals.Physics.Systems
 
         public Camera Camera;
 
+        public float Sensitivity;
+
         #endregion
 
         #region Methods
@@ -37,8 +39,9 @@ namespace Rituals.Physics.Systems
 
         private void OnLookDirectionInput(object sender, LookDirectionInputEventArgs args)
         {
-            this.Camera.transform.localRotation =
-                Quaternion.Euler(this.Camera.transform.localEulerAngles + new Vector3(-args.Delta.y, args.Delta.x, 0.0f));
+            var euler = this.Camera.transform.localEulerAngles
+                        + new Vector3(-args.Delta.y * this.Sensitivity, args.Delta.x * this.Sensitivity, 0.0f);
+            this.Camera.transform.localRotation = Quaternion.Euler(euler);
         }
 
         #endregion

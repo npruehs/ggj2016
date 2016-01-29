@@ -13,20 +13,12 @@ namespace Rituals.Input.Systems
 
     public class LookDirectionInputSystem : RitualsBehaviour
     {
-        #region Fields
-
-        private Vector3 oldMousePosition;
-
-        #endregion
-
         #region Methods
 
         private void Update()
         {
             // Compute delta.
-            var newMousePosition = Input.mousePosition;
-            var delta = newMousePosition - this.oldMousePosition;
-            this.oldMousePosition = newMousePosition;
+            var delta = new Vector3(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"), 0.0f);
 
             // Notify listeners.
             this.EventManager.OnLookDirectionInput(this, new LookDirectionInputEventArgs { Delta = delta });
