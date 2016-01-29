@@ -39,12 +39,8 @@ namespace Rituals.Physics.Systems
 
         private void OnMovementInput(object sender, MovementInputEventArgs args)
         {
-            this.Player.transform.position += args.Direction * Time.deltaTime * this.Speed;
-        }
-
-        private void Update()
-        {
-            this.Player.transform.rotation = Quaternion.identity;
+            this.Player.transform.position += this.Player.transform.TransformDirection(args.Direction) * Time.deltaTime
+                                              * this.Speed;
         }
 
         #endregion

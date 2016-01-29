@@ -22,11 +22,29 @@ namespace Rituals.Core
         {
         }
 
+        protected virtual void DeInit()
+        {
+        }
+
+        protected virtual void Init()
+        {
+        }
+
         protected virtual void RemoveListeners()
         {
         }
 
-        private void Awake()
+        private void OnDisable()
+        {
+            if (this.EventManager != null)
+            {
+                this.RemoveListeners();
+            }
+
+            this.DeInit();
+        }
+
+        private void OnEnable()
         {
             this.EventManager = FindObjectOfType<EventManager>();
 
@@ -34,14 +52,8 @@ namespace Rituals.Core
             {
                 this.AddListeners();
             }
-        }
 
-        private void OnDestroy()
-        {
-            if (this.EventManager != null)
-            {
-                this.RemoveListeners();
-            }
+            this.Init();
         }
 
         #endregion
