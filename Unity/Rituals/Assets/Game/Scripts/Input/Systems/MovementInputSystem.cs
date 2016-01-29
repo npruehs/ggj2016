@@ -7,7 +7,7 @@
 namespace Rituals.Input.Systems
 {
     using Rituals.Core;
-    using Rituals.Physics.Events;
+    using Rituals.Input.Events;
 
     using UnityEngine;
 

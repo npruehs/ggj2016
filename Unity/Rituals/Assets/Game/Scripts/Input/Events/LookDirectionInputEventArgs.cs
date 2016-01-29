@@ -4,7 +4,7 @@
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Rituals.Physics.Events
+namespace Rituals.Input.Events
 {
     using System;
 

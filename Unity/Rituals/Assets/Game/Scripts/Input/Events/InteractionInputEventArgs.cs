@@ -1,21 +1,13 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="MovementInputEventArgs.cs" company="Slash Games">
+// <copyright file="InteractionInputEventArgs.cs" company="Slash Games">
 //   Copyright (c) Slash Games. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
-
-namespace Rituals.Physics.Events
+namespace Rituals.Input.Events
 {
     using System;
 
-    using UnityEngine;
-
-    public class MovementInputEventArgs : EventArgs
+    public class InteractionInputEventArgs : EventArgs
     {
-        #region Fields
-
-        public Vector3 Direction;
-
-        #endregion
     }
 }

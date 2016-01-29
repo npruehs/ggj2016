@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="LookDirectionInputSystem.cs" company="Slash Games">
+// <copyright file="InteractionInputSystem.cs" company="Slash Games">
 //   Copyright (c) Slash Games. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
@@ -11,17 +11,16 @@ namespace Rituals.Input.Systems
 
     using UnityEngine;
 
-    public class LookDirectionInputSystem : RitualsBehaviour
+    public class InteractionInputSystem : RitualsBehaviour
     {
         #region Methods
 
         private void Update()
         {
-            // Compute delta.
-            var delta = new Vector3(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"), 0.0f);
-
-            // Notify listeners.
-            this.EventManager.OnLookDirectionInput(this, new LookDirectionInputEventArgs { Delta = delta });
+            if (Input.GetKey(KeyCode.E))
+            {
+                this.EventManager.OnInteractionInput(this, new InteractionInputEventArgs());
+            }
         }
 
         #endregion

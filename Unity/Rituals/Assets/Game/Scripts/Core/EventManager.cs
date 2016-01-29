@@ -6,13 +6,15 @@
 
 namespace Rituals.Core
 {
-    using Rituals.Physics.Events;
+    using Rituals.Input.Events;
 
     using UnityEngine;
 
     public class EventManager : MonoBehaviour
     {
         #region Delegates
+
+        public delegate void InteractionInputDelegate(object sender, InteractionInputEventArgs args);
 
         public delegate void LookDirectionInputDelegate(object sender, LookDirectionInputEventArgs args);
 
@@ -26,9 +28,20 @@ namespace Rituals.Core
 
         public event LookDirectionInputDelegate LookDirectionInput;
 
+        public event InteractionInputDelegate InteractionInput;
+
         #endregion
 
         #region Public Methods and Operators
+
+        public void OnInteractionInput(object sender, InteractionInputEventArgs args)
+        {
+            var handler = this.InteractionInput;
+            if (handler != null)
+            {
+                handler(sender, args);
+            }
+        }
 
         public void OnLookDirectionInput(object sender, LookDirectionInputEventArgs args)
         {
