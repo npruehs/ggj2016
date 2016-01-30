@@ -15,6 +15,7 @@ namespace Rituals.Objectives.Systems
     using Rituals.Interaction.Util;
     using Rituals.Objectives.Data;
     using Rituals.Objectives.Events;
+    using Rituals.Obstacles.Events;
 
     using UnityEngine;
 
@@ -26,6 +27,8 @@ namespace Rituals.Objectives.Systems
 
         private Objective currentObjective;
 
+        private int remainingObstacles;
+
         #endregion
 
         #region Methods
@@ -35,6 +38,7 @@ namespace Rituals.Objectives.Systems
             base.AddListeners();
 
             this.EventManager.InteractableUsed += this.OnInteractableUsed;
+            this.EventManager.ObstaclesChanged += this.OnObstaclesChanged;
         }
 
         protected override void Init()
@@ -76,6 +80,12 @@ namespace Rituals.Objectives.Systems
                 return;
             }
 
+            if (this.remainingObstacles > 0)
+            {
+                Debug.Log(string.Format("Objective blocked by {0} obstacles.", this.remainingObstacles));
+                return;
+            }
+
             if (this.currentObjective.GameObject == args.GameObject)
             {
                 // Finish objective.
@@ -93,6 +103,11 @@ namespace Rituals.Objectives.Systems
                     this.SetCurrentObjective(null);
                 }
             }
+        }
+
+        private void OnObstaclesChanged(object sender, ObstaclesChangedEventArgs args)
+        {
+            this.remainingObstacles = args.Obstacles;
         }
 
         private void SetCurrentObjective(Objective objective)

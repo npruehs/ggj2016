@@ -9,6 +9,7 @@ namespace Rituals.Settings.Data
     using System.Collections.Generic;
 
     using Rituals.Audio.Data;
+    using Rituals.Obstacles.Data;
 
     using UnityEngine;
 
@@ -25,6 +26,8 @@ namespace Rituals.Settings.Data
         public float ItemSizePressureFactor = 1.0f;
 
         public List<GameObject> Objectives = new List<GameObject>();
+
+        public List<ObstacleData> Obstacles = new List<ObstacleData>();
 
         public float PlayerSpeed = 1;
 

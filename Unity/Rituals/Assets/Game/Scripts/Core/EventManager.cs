@@ -11,6 +11,7 @@ namespace Rituals.Core
     using Rituals.Input.Events;
     using Rituals.Interaction.Events;
     using Rituals.Objectives.Events;
+    using Rituals.Obstacles.Events;
     using Rituals.Physics.Events;
     using Rituals.Pressure.Events;
 
@@ -44,6 +45,8 @@ namespace Rituals.Core
 
         public delegate void ObjectiveStateChangedDelegate(object sender, ObjectiveStateChangedEventArgs args);
 
+        public delegate void ObstaclesChangedDelegate(object sender, ObstaclesChangedEventArgs args);
+
         public delegate void PressureChangedDelegate(object sender, PressureChangedEventArgs args);
 
         public delegate void SelectedInteractableChangedDelegate(
@@ -53,6 +56,8 @@ namespace Rituals.Core
         #endregion
 
         #region Events
+
+        public event ObstaclesChangedDelegate ObstaclesChanged;
 
         public event CurrentObjectiveChangedDelegate CurrentObjectiveChanged;
 
@@ -188,6 +193,15 @@ namespace Rituals.Core
         public void OnObjectiveStateChanged(object sender, ObjectiveStateChangedEventArgs args)
         {
             var handler = this.ObjectiveStateChanged;
+            if (handler != null)
+            {
+                handler(sender, args);
+            }
+        }
+
+        public void OnObstaclesChanged(object sender, ObstaclesChangedEventArgs args)
+        {
+            var handler = this.ObstaclesChanged;
             if (handler != null)
             {
                 handler(sender, args);

@@ -6,11 +6,11 @@
 
 namespace Rituals.Editor
 {
-    using System.Collections.Generic;
     using System.Linq;
 
     using Rituals.Flow.Components;
     using Rituals.Interaction.Components;
+    using Rituals.Obstacles.Data;
     using Rituals.Physics.Components;
     using Rituals.Settings.Data;
 
@@ -80,6 +80,39 @@ namespace Rituals.Editor
 
             // Add interaction collider.
             MakeInteractable(newObjective);
+        }
+
+        [MenuItem("OCD/Make Obstacle")]
+        public static void MakeObstacle()
+        {
+            var newObstacle = Selection.activeGameObject;
+
+            if (newObstacle == null)
+            {
+                return;
+            }
+
+            LevelSettings levelSettings = Object.FindObjectOfType<LevelSettings>();
+
+            if (levelSettings == null)
+            {
+                EditorUtility.DisplayDialog("Error", "Level settings not found.", "Cancel");
+                return;
+            }
+
+            if (levelSettings.Obstacles.All(o => o.Obstacle != newObstacle))
+            {
+                levelSettings.Obstacles.Add(new ObstacleData { Obstacle = newObstacle });
+            }
+
+            // Add interactable component.
+            if (newObstacle.GetComponent<InteractableComponent>() == null)
+            {
+                newObstacle.AddComponent<InteractableComponent>();
+            }
+
+            // Add interaction collider.
+            MakeInteractable(newObstacle);
         }
 
         #endregion
