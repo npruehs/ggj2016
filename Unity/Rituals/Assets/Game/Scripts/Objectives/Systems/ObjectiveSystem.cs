@@ -65,6 +65,11 @@ namespace Rituals.Objectives.Systems
 
         private void OnInteractableUsed(object sender, InteractableUsedEventArgs args)
         {
+            if (this.currentObjective == null)
+            {
+                return;
+            }
+
             if (this.currentObjective.GameObject == args.GameObject)
             {
                 // Finish objective.
@@ -76,6 +81,10 @@ namespace Rituals.Objectives.Systems
                 if (nextObjective != null)
                 {
                     this.SetObjectiveState(nextObjective, ObjectiveState.Active);
+                }
+                else
+                {
+                    this.currentObjective = null;
                 }
             }
         }
