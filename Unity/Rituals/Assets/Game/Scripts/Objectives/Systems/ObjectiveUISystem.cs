@@ -53,8 +53,7 @@ namespace Rituals.Objectives.Systems
             }
 
             var textObject = Instantiate(this.ObjectiveTextPrefab);
-            textObject.transform.parent = this.ObjectiveTextRoot;
-            textObject.transform.localScale = Vector3.one;
+            textObject.transform.SetParent(this.ObjectiveTextRoot, false);
 
             var text = textObject.GetComponent<Text>();
 
