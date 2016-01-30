@@ -25,6 +25,8 @@ namespace Rituals.Settings.Data
 
         public float ItemSizePressureFactor = 1.0f;
 
+        public int LevelIndex = 1;
+
         public List<GameObject> Objectives = new List<GameObject>();
 
         public List<ObstacleData> Obstacles = new List<ObstacleData>();
