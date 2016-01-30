@@ -6,6 +6,8 @@
 
 namespace Rituals.Core
 {
+    using System;
+
     using Rituals.Input.Events;
     using Rituals.Interaction.Events;
     using Rituals.Objectives.Events;
@@ -21,6 +23,8 @@ namespace Rituals.Core
         public delegate void CollisionEnteredDelegate(object sender, CollisionEventArgs args);
 
         public delegate void CollisionExitedDelegate(object sender, CollisionEventArgs args);
+
+        public delegate void ConcedeInputDelegate(object sender, EventArgs args);
 
         public delegate void InteractableEnteredRangeDelegate(object sender, InteractableEnteredRangeEventArgs args);
 
@@ -66,6 +70,8 @@ namespace Rituals.Core
 
         public event ObjectiveAddedDelegate ObjectiveAdded;
 
+        public event ConcedeInputDelegate ConcedeInput;
+
         #endregion
 
         #region Public Methods and Operators
@@ -85,6 +91,15 @@ namespace Rituals.Core
             if (handler != null)
             {
                 handler(sender, args);
+            }
+        }
+
+        public void OnConcedeInput(object sender, EventArgs eventArgs)
+        {
+            var handler = this.ConcedeInput;
+            if (handler != null)
+            {
+                handler(sender, eventArgs);
             }
         }
 
