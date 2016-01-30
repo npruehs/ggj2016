@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="PressureMusic.cs" company="Slash Games">
+// <copyright file="PressureObjectiveClip.cs" company="Slash Games">
 //   Copyright (c) Slash Games. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
@@ -11,13 +11,15 @@ namespace Rituals.Audio.Data
     using UnityEngine;
 
     [Serializable]
-    public class PressureMusic
+    public class PressureObjectiveClip
     {
         #region Fields
 
         public AudioClip Clip;
 
         public float MinimumPressure;
+
+        public GameObject Objective;
 
         #endregion
     }

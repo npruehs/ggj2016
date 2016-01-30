@@ -20,7 +20,7 @@ namespace Rituals.Audio.Systems
 
         public AudioSource AudioSource;
 
-        public PressureMusic[] Clips;
+        public PressureClip[] Clips;
 
         #endregion
 

@@ -8,6 +8,8 @@ namespace Rituals.Settings.Data
 {
     using System.Collections.Generic;
 
+    using Rituals.Audio.Data;
+
     using UnityEngine;
 
     public class LevelSettings : MonoBehaviour
@@ -29,6 +31,10 @@ namespace Rituals.Settings.Data
         public float PressureAppliedPerSecond = 0.1f;
 
         public float PressureReducedPerObjective = 0.33f;
+
+        public List<PressureObjectiveClip> SpeechClips = new List<PressureObjectiveClip>();
+
+        public float SpeechDelay = 5.0f;
 
         public float TwirlStrength = 10.0f;
 
