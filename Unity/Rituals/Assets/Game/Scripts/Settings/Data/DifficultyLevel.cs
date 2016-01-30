@@ -1,22 +1,17 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="QuitOnClick.cs" company="Slash Games">
+// <copyright file="DifficultyLevel.cs" company="Slash Games">
 //   Copyright (c) Slash Games. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Rituals.Menu.MainMenu
+namespace Rituals.Settings.Data
 {
-    using UnityEngine;
-
-    public class QuitOnClick : ButtonClickHandler
+    public enum DifficultyLevel
     {
-        #region Methods
+        Easy,
 
-        protected override void OnButtonClicked()
-        {
-            Application.Quit();
-        }
+        Medium,
 
-        #endregion
+        Hard
     }
 }

@@ -7,13 +7,10 @@
 namespace Rituals.Menu.MainMenu
 {
     using UnityEngine;
-    using UnityEngine.UI;
 
-    public class LoadSceneOnClick : MonoBehaviour
+    public class LoadSceneOnClick : ButtonClickHandler
     {
         #region Fields
-
-        public Button Button;
 
         public string Scene;
 
@@ -21,25 +18,9 @@ namespace Rituals.Menu.MainMenu
 
         #region Methods
 
-        private void OnButtonClicked()
+        protected override void OnButtonClicked()
         {
             Application.LoadLevel(this.Scene);
-        }
-
-        private void OnDisable()
-        {
-            if (this.Button != null)
-            {
-                this.Button.onClick.RemoveListener(this.OnButtonClicked);
-            }
-        }
-
-        private void OnEnable()
-        {
-            if (this.Button != null)
-            {
-                this.Button.onClick.AddListener(this.OnButtonClicked);
-            }
         }
 
         #endregion
