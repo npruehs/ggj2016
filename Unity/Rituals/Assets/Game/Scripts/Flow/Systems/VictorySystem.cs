@@ -61,7 +61,8 @@ namespace Rituals.Flow.Systems
             }
 
             // Victory!
-            Application.LoadLevel("GameScene");
+            Cursor.visible = true;
+            Application.LoadLevel("MainMenu");
         }
 
         private void OnObjectiveStateChanged(object sender, ObjectiveStateChangedEventArgs args)
