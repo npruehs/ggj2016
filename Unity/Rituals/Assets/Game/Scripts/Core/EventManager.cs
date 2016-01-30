@@ -9,6 +9,7 @@ namespace Rituals.Core
     using Rituals.Input.Events;
     using Rituals.Interaction.Events;
     using Rituals.Physics.Events;
+    using Rituals.Pressure.Events;
 
     using UnityEngine;
 
@@ -32,6 +33,8 @@ namespace Rituals.Core
 
         public delegate void MovementInputDelegate(object sender, MovementInputEventArgs args);
 
+        public delegate void PressureChangedDelegate(object sender, PressureChangedEventArgs args);
+
         #endregion
 
         #region Events
@@ -51,6 +54,8 @@ namespace Rituals.Core
         public event InteractableLeftRangeDelegate InteractableLeftRange;
 
         public event InteractableUsedDelegate InteractableUsed;
+
+        public event PressureChangedDelegate PressureChanged;
 
         #endregion
 
@@ -122,6 +127,15 @@ namespace Rituals.Core
         public void OnMovementInput(object sender, MovementInputEventArgs args)
         {
             var handler = this.MovementInput;
+            if (handler != null)
+            {
+                handler(sender, args);
+            }
+        }
+
+        public void OnPressureChanged(object sender, PressureChangedEventArgs args)
+        {
+            var handler = this.PressureChanged;
             if (handler != null)
             {
                 handler(sender, args);
