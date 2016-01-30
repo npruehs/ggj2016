@@ -1,0 +1,23 @@
+# MTL written from I:\Projects\OCD\Models\Clock.obj
+newmtl Clock_Backplate
+Kd 0.48 0.48 0.48
+Ns 256
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.04 0.04 0.04
+map_Kd I:\Projects\OCD\Clock.jpg
+newmtl Clock_Metal
+Kd 0.48 0.48 0.48
+Ns 256
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.04 0.04 0.04
+newmtl Clock_Wijzers
+Kd 0.48 0.48 0.48
+Ns 256
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.04 0.04 0.04
