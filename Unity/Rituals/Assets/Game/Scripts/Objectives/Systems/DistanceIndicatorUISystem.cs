@@ -50,6 +50,7 @@ namespace Rituals.Objectives.Systems
             if (this.currentObjective == null)
             {
                 this.Text.text = string.Empty;
+                this.Image.enabled = false;
                 return;
             }
 
