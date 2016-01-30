@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Button: {fileID: 90704278}
-  Scene: GameScene
+  Scene: LevelSelection
 --- !u!222 &90704280
 CanvasRenderer:
   m_ObjectHideFlags: 0
