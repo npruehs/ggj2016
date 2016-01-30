@@ -1,0 +1,15 @@
+# MTL written from I:\Projects\OCD\Models\Pen_Fancy.obj
+newmtl Gooooooooold
+Kd 0.8 0.8 0.144
+Ns 256
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.04 0.04 0.04
+newmtl Pen
+Kd 0.0115767 0.0115767 0.0115767
+Ns 256
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.4 0.4 0.4

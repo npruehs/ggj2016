@@ -1,0 +1,29 @@
+# MTL written from I:\Projects\OCD\Models\gooseNeckLamp.obj
+newmtl Gooseneck_Lamp_Rubber
+Kd 0.48 0.48 0.48
+Ns 256
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.2 0.2 0.2
+newmtl Gooseneck_Lamp_shade
+Kd 0.48 0.48 0.48
+Ns 256
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.2 0.2 0.2
+newmtl Gooseneck_Lamp_shade_032_Bottom_032
+Kd 0.48 0.48 0.48
+Ns 256
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.2 0.2 0.2
+newmtl Gooseneck_Lamp_stand
+Kd 0.48 0.48 0.48
+Ns 256
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.2 0.2 0.2

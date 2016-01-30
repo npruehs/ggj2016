@@ -1,0 +1,36 @@
+# MTL written from I:\Projects\OCD\Models\ceilingLight.obj
+newmtl Hanging_Round_Lamp_032_Chrome
+Kd 0.48 0.48 0.48
+Ns 256
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.2 0.2 0.2
+newmtl Hanging_Round_Lamp_Cotton_White
+Kd 0.48 0.48 0.48
+Ns 256
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.2 0.2 0.2
+newmtl Hanging_Round_Lamp_Grass
+Kd 0.48 0.48 0.48
+Ns 256
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.2 0.2 0.2
+newmtl Hanging_Round_Lamp_Pattern
+Kd 0.48 0.48 0.48
+Ns 256
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.2 0.2 0.2
+newmtl Hanging_Round_Lamp_Wire
+Kd 0.48 0.48 0.48
+Ns 256
+d 1
+illum 2
+Ka 0 0 0
+Ks 0.2 0.2 0.2

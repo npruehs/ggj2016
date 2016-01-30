@@ -1,0 +1,85 @@
+newmtl bed1:wire_000000000
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.17 0.17 0.17
+Ns 96.08
+newmtl bed1:wire_006134006
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Fabric_DIF.jpg
+bump Fabric_NRM.jpg -bm 1
+Ni 1.00
+Ks 0.17 0.17 0.17
+Ns 96.08
+newmtl bed1:wire_006135113
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Leather_DIF.jpg
+bump Leather_NRM.jpg -bm 1
+Ni 1.00
+Ks 0.17 0.17 0.17
+Ns 96.08
+newmtl bed1:wire_153228184
+illum 4
+Kd 0.48 0.71 0.58
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.17 0.17 0.17
+Ns 96.08
+newmtl bed1:wire_196088225
+illum 4
+Kd 0.61 0.28 0.71
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.17 0.17 0.17
+Ns 96.08
+newmtl bed1:wire_228153184
+illum 4
+Kd 0.71 0.48 0.58
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.17 0.17 0.17
+Ns 96.08
+newmtl bed1:wire_255255255
+illum 4
+Kd 0.80 0.80 0.80
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.17 0.17 0.17
+Ns 96.08
+newmtl blinn1SG
+illum 4
+Kd 0.13 0.13 0.13
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+Ks 0.94 0.94 0.94
+newmtl blinn3SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd FabricPatterns_DIF.jpg
+bump Fabric_NRM.jpg -bm 1
+Ni 1.00
+Ks 0.50 0.50 0.50
+newmtl blinn4SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd FabricWhite_DIF.jpg
+bump FabricWhite_NRM.jpg -bm 1
+Ni 1.00
+Ks 0.50 0.50 0.50
