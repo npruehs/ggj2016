@@ -64,7 +64,7 @@ namespace Rituals.Interaction.Systems
                 new InteractableEnteredRangeEventArgs { GameObject = interactable.gameObject });
 
             // Set reference.
-            this.selectedInteractable = interactable.gameObject;
+            this.SelectInteractable(interactable.gameObject);
         }
 
         private void OnCollisionExited(object sender, CollisionEventArgs args)
@@ -86,8 +86,11 @@ namespace Rituals.Interaction.Systems
                 this,
                 new InteractableLeftRangeEventArgs { GameObject = interactable.gameObject });
 
-            // Reset reference.
-            this.selectedInteractable = null;
+            if (this.selectedInteractable == interactable.gameObject)
+            {
+                // Reset reference.
+                this.SelectInteractable(null);
+            }
         }
 
         private void OnInteractionInput(object sender, InteractionInputEventArgs args)
@@ -100,6 +103,16 @@ namespace Rituals.Interaction.Systems
             this.EventManager.OnInteractableUsed(
                 this,
                 new InteractableUsedEventArgs { GameObject = this.selectedInteractable });
+        }
+
+        private void SelectInteractable(GameObject interactable)
+        {
+            this.selectedInteractable = interactable;
+
+            // Notify listeners.
+            this.EventManager.OnSelectedInteractableChanged(
+                this,
+                new SelectedInteractableChangedEventArgs { Interactable = this.selectedInteractable });
         }
 
         #endregion

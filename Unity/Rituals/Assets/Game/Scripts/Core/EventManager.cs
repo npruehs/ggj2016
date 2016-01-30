@@ -44,6 +44,10 @@ namespace Rituals.Core
 
         public delegate void PressureChangedDelegate(object sender, PressureChangedEventArgs args);
 
+        public delegate void SelectedInteractableChangedDelegate(
+            object sender,
+            SelectedInteractableChangedEventArgs args);
+
         #endregion
 
         #region Events
@@ -71,6 +75,8 @@ namespace Rituals.Core
         public event ObjectiveAddedDelegate ObjectiveAdded;
 
         public event ConcedeInputDelegate ConcedeInput;
+
+        public event SelectedInteractableChangedDelegate SelectedInteractableChanged;
 
         #endregion
 
@@ -178,6 +184,15 @@ namespace Rituals.Core
         public void OnPressureChanged(object sender, PressureChangedEventArgs args)
         {
             var handler = this.PressureChanged;
+            if (handler != null)
+            {
+                handler(sender, args);
+            }
+        }
+
+        public void OnSelectedInteractableChanged(object sender, SelectedInteractableChangedEventArgs args)
+        {
+            var handler = this.SelectedInteractableChanged;
             if (handler != null)
             {
                 handler(sender, args);

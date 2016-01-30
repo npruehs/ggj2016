@@ -25,26 +25,21 @@ namespace Rituals.Interaction.Systems
         {
             base.AddListeners();
 
-            this.EventManager.InteractableEnteredRange += this.OnInteractableEnteredRange;
-            this.EventManager.InteractableLeftRange += this.OnInteractableLeftRange;
+            this.EventManager.SelectedInteractableChanged += this.OnSelectedInteractableChanged;
         }
 
         protected override void RemoveListeners()
         {
             base.RemoveListeners();
 
-            this.EventManager.InteractableEnteredRange -= this.OnInteractableEnteredRange;
-            this.EventManager.InteractableLeftRange -= this.OnInteractableLeftRange;
+            this.EventManager.SelectedInteractableChanged -= this.OnSelectedInteractableChanged;
         }
 
-        private void OnInteractableEnteredRange(object sender, InteractableEnteredRangeEventArgs args)
+        private void OnSelectedInteractableChanged(object sender, SelectedInteractableChangedEventArgs args)
         {
-            this.InteractionText.text = string.Format("Use {0}", args.GameObject.name);
-        }
-
-        private void OnInteractableLeftRange(object sender, InteractableLeftRangeEventArgs args)
-        {
-            this.InteractionText.text = string.Empty;
+            this.InteractionText.text = args.Interactable != null
+                ? string.Format("Use {0}", args.Interactable.name)
+                : string.Empty;
         }
 
         #endregion
