@@ -8,6 +8,7 @@ namespace Rituals.Flow.Systems
 {
     using Rituals.Core;
     using Rituals.Flow.Components;
+    using Rituals.Interaction.Util;
     using Rituals.Objectives.Events;
     using Rituals.Physics.Events;
 
@@ -22,6 +23,21 @@ namespace Rituals.Flow.Systems
         #endregion
 
         #region Methods
+
+        protected override void Init()
+        {
+            base.Init();
+
+            var exit = FindObjectOfType<ExitComponent>();
+
+            if (exit == null)
+            {
+                Debug.LogError("No exit found!");
+                return;
+            }
+
+            InteractionUtils.IsInteractive(exit.gameObject);
+        }
 
         protected override void AddListeners()
         {

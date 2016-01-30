@@ -12,6 +12,7 @@ namespace Rituals.Objectives.Systems
     using Rituals.Core;
     using Rituals.Interaction.Components;
     using Rituals.Interaction.Events;
+    using Rituals.Interaction.Util;
     using Rituals.Objectives.Data;
     using Rituals.Objectives.Events;
     using Rituals.Physics.Components;
@@ -139,31 +140,7 @@ namespace Rituals.Objectives.Systems
                 return false;
             }
 
-            var colliderComponent = objective.GetComponentInChildren<ColliderComponent>();
-
-            if (colliderComponent == null)
-            {
-                Debug.LogError(string.Format("Objective {0} does not have an ColliderComponent attached.", objective.name));
-                return false;
-            }
-
-            var objectiveCollider = colliderComponent.GetComponent<Collider>();
-
-            if (objectiveCollider == null)
-            {
-                Debug.LogError(
-                    string.Format("Objective {0} does not have a Collider attached at the ColliderComponent object.", objective.name));
-                return false;
-            }
-
-            if (!objectiveCollider.isTrigger)
-            {
-                Debug.LogError(
-                    string.Format("Objective {0} interaction collider is not set up as Trigger.", objective.name));
-                return false;
-            }
-
-            return true;
+            return InteractionUtils.IsInteractive(objective);
         }
 
         #endregion
