@@ -92,7 +92,7 @@ namespace Rituals.Interaction.Systems
                 this,
                 new InteractableLeftRangeEventArgs { GameObject = interactable.gameObject });
 
-            if (this.selectedInteractable == interactable.gameObject)
+            if (this.selectedInteractable == interactable)
             {
                 // Reset reference.
                 this.SelectInteractable(null);
@@ -111,10 +111,13 @@ namespace Rituals.Interaction.Systems
             // Notify listeners.
             this.EventManager.OnSelectedInteractableChanged(
                 this,
-                new SelectedInteractableChangedEventArgs { Interactable = this.selectedInteractable.gameObject });
+                new SelectedInteractableChangedEventArgs
+                {
+                    Interactable = this.selectedInteractable != null ? this.selectedInteractable.gameObject : null
+                });
 
             // Check if auto.
-            if (this.selectedInteractable.Auto)
+            if (this.selectedInteractable != null && this.selectedInteractable.Auto)
             {
                 this.UseInteractable();
             }
