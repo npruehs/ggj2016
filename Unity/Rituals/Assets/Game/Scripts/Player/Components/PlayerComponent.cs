@@ -8,6 +8,8 @@ namespace Rituals.Player.Components
 {
     using UnityEngine;
 
+    using UnityStandardAssets.ImageEffects;
+
     public class PlayerComponent : MonoBehaviour
     {
         #region Fields
@@ -15,6 +17,10 @@ namespace Rituals.Player.Components
         public Camera PlayerCamera;
 
         public Collider PlayerInteractionCollider;
+
+        public Twirl Twirl;
+
+        public VignetteAndChromaticAberration VignetteAndChromaticAberration;
 
         #endregion
     }

@@ -290,6 +290,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &160922
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 464614}
+  - 114: {fileID: 11412058}
+  m_Layer: 0
+  m_Name: Pressure Effects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &162660
 GameObject:
   m_ObjectHideFlags: 1
@@ -707,6 +723,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 418122}
   m_RootOrder: 1
+--- !u!4 &464614
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 160922}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 475270}
+  m_RootOrder: 3
 --- !u!4 &465942
 Transform:
   m_ObjectHideFlags: 1
@@ -732,6 +760,7 @@ Transform:
   - {fileID: 401112}
   - {fileID: 476610}
   - {fileID: 465942}
+  - {fileID: 464614}
   m_Father: {fileID: 434792}
   m_RootOrder: 3
 --- !u!4 &475976
@@ -837,6 +866,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca203c8be1857b24b8911c3b2d2ca408, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11412058
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 160922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05cde19c45b8536428b36e906533bb36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &11415974
@@ -977,10 +1017,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4821509e0eca604e892e057ad16214f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ChromaticAbberationStrength: 30
   Objectives: []
   PlayerSpeed: 1
   PressureAppliedPerSecond: .100000001
   PressureReducedPerObjective: .330000013
+  TwirlStrength: 10
 --- !u!114 &11449066
 MonoBehaviour:
   m_ObjectHideFlags: 1
