@@ -999,7 +999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2de0fa9255681b14badb103a5c48e3f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Auto: 0
+  Auto: 1
   Enabled: 1
   Interaction: Go To Work
 --- !u!1 &242763554 stripped
@@ -3372,7 +3372,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 780919065}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.5, y: 0, z: -7.06500053}
+  m_LocalPosition: {x: -2.5, y: -.55400002, z: -7.06400013}
   m_LocalScale: {x: -1, y: 1.06382978, z: 1}
   m_Children: []
   m_Father: {fileID: 1816997395}
@@ -5494,8 +5494,8 @@ MonoBehaviour:
   - {fileID: 620330957}
   - {fileID: 217117975}
   Obstacles: []
-  PlayerSpeed: 1
-  PressureAppliedPerSecond: .100000001
+  PlayerSpeed: 1.25
+  PressureAppliedPerSecond: .0500000007
   PressureReducedPerObjective: .330000013
   SpeechClips: []
   SpeechDelay: 5
@@ -6990,6 +6990,14 @@ Prefab:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 4ae7d83773e768e438644dc1e4ffd386, type: 2}
+    - target: {fileID: 100000, guid: 771fb7542de35d841a5b4f133aa56f41, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 771fb7542de35d841a5b4f133aa56f41, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 771fb7542de35d841a5b4f133aa56f41, type: 3}
   m_IsPrefabParent: 0
