@@ -7,6 +7,7 @@
 namespace Rituals.Core
 {
     using Rituals.Input.Events;
+    using Rituals.Interaction.Events;
     using Rituals.Physics.Events;
 
     using UnityEngine;
@@ -18,6 +19,12 @@ namespace Rituals.Core
         public delegate void CollisionEnteredDelegate(object sender, CollisionEventArgs args);
 
         public delegate void CollisionExitedDelegate(object sender, CollisionEventArgs args);
+
+        public delegate void InteractableEnteredRangeDelegate(object sender, InteractableEnteredRangeEventArgs args);
+
+        public delegate void InteractableLeftRangeDelegate(object sender, InteractableLeftRangeEventArgs args);
+
+        public delegate void InteractableUsedDelegate(object sender, InteractableUsedEventArgs args);
 
         public delegate void InteractionInputDelegate(object sender, InteractionInputEventArgs args);
 
@@ -39,6 +46,12 @@ namespace Rituals.Core
 
         public event CollisionExitedDelegate CollisionExited;
 
+        public event InteractableEnteredRangeDelegate InteractableEnteredRange;
+
+        public event InteractableLeftRangeDelegate InteractableLeftRange;
+
+        public event InteractableUsedDelegate InteractableUsed;
+
         #endregion
 
         #region Public Methods and Operators
@@ -55,6 +68,33 @@ namespace Rituals.Core
         public void OnCollisionExited(object sender, CollisionEventArgs args)
         {
             var handler = this.CollisionExited;
+            if (handler != null)
+            {
+                handler(sender, args);
+            }
+        }
+
+        public void OnInteractableEnteredRange(object sender, InteractableEnteredRangeEventArgs args)
+        {
+            var handler = this.InteractableEnteredRange;
+            if (handler != null)
+            {
+                handler(sender, args);
+            }
+        }
+
+        public void OnInteractableLeftRange(object sender, InteractableLeftRangeEventArgs args)
+        {
+            var handler = this.InteractableLeftRange;
+            if (handler != null)
+            {
+                handler(sender, args);
+            }
+        }
+
+        public void OnInteractableUsed(object sender, InteractableUsedEventArgs args)
+        {
+            var handler = this.InteractableUsed;
             if (handler != null)
             {
                 handler(sender, args);

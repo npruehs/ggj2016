@@ -8,6 +8,8 @@ namespace Rituals.Interaction.Systems
 {
     using Rituals.Core;
     using Rituals.Input.Events;
+    using Rituals.Interaction.Components;
+    using Rituals.Interaction.Events;
     using Rituals.Physics.Events;
 
     using UnityEngine;
@@ -17,6 +19,8 @@ namespace Rituals.Interaction.Systems
         #region Fields
 
         public Collider PlayerInteractionCollider;
+
+        private GameObject selectedInteractable;
 
         #endregion
 
@@ -42,27 +46,60 @@ namespace Rituals.Interaction.Systems
 
         private void OnCollisionEntered(object sender, CollisionEventArgs args)
         {
-            if (args.First.gameObject.tag != "Player")
+            if (args.First != this.PlayerInteractionCollider)
             {
                 return;
             }
 
-            Debug.Log("Enter " + args.Second);
+            var interactable = args.Second.GetComponentInParent<InteractableComponent>();
+
+            if (interactable == null)
+            {
+                return;
+            }
+
+            // Notify listeners.
+            this.EventManager.OnInteractableEnteredRange(
+                this,
+                new InteractableEnteredRangeEventArgs { GameObject = interactable.gameObject });
+
+            // Set reference.
+            this.selectedInteractable = interactable.gameObject;
         }
 
         private void OnCollisionExited(object sender, CollisionEventArgs args)
         {
-            if (args.First.gameObject.tag != "Player")
+            if (args.First != this.PlayerInteractionCollider)
             {
                 return;
             }
 
-            Debug.Log("Exit " + args.Second);
+            var interactable = args.Second.GetComponentInParent<InteractableComponent>();
+
+            if (interactable == null)
+            {
+                return;
+            }
+
+            // Notify listeners.
+            this.EventManager.OnInteractableLeftRange(
+                this,
+                new InteractableLeftRangeEventArgs { GameObject = interactable.gameObject });
+
+            // Reset reference.
+            this.selectedInteractable = null;
         }
 
         private void OnInteractionInput(object sender, InteractionInputEventArgs args)
         {
-            Debug.Log("E");
+            if (this.selectedInteractable == null)
+            {
+                return;
+            }
+
+            this.EventManager.OnInteractableUsed(
+                this,
+                new InteractableUsedEventArgs { GameObject = this.selectedInteractable });
         }
 
         #endregion
