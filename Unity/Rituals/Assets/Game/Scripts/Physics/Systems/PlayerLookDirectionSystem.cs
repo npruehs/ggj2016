@@ -45,6 +45,16 @@ namespace Rituals.Physics.Systems
             }
         }
 
+        protected override void DeInit()
+        {
+            base.DeInit();
+
+            if (this.HideCursor)
+            {
+                Cursor.visible = true;
+            }
+        }
+
         protected override void RemoveListeners()
         {
             base.RemoveListeners();

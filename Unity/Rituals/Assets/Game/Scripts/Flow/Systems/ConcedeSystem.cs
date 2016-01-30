@@ -1,5 +1,5 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="ReturnToMainMenuSystem.cs" company="Slash Games">
+// <copyright file="ConcedeSystem.cs" company="Slash Games">
 //   Copyright (c) Slash Games. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
@@ -12,7 +12,7 @@ namespace Rituals.Flow.Systems
 
     using UnityEngine;
 
-    public class ReturnToMainMenuSystem : RitualsBehaviour
+    public class ConcedeSystem : RitualsBehaviour
     {
         #region Methods
 
@@ -32,7 +32,6 @@ namespace Rituals.Flow.Systems
 
         private void OnConcedeInput(object sender, EventArgs args)
         {
-            Cursor.visible = true;
             Application.LoadLevel("MainMenu");
         }
 

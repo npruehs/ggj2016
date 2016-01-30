@@ -61,7 +61,6 @@ namespace Rituals.Flow.Systems
             }
 
             // Victory!
-            Cursor.visible = true;
             Application.LoadLevel("MainMenu");
         }
 
