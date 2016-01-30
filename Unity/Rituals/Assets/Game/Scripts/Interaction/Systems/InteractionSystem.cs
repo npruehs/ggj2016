@@ -18,8 +18,6 @@ namespace Rituals.Interaction.Systems
     {
         #region Fields
 
-        public Collider PlayerInteractionCollider;
-
         private GameObject selectedInteractable;
 
         #endregion
@@ -46,7 +44,12 @@ namespace Rituals.Interaction.Systems
 
         private void OnCollisionEntered(object sender, CollisionEventArgs args)
         {
-            if (args.First != this.PlayerInteractionCollider)
+            if (this.Player == null)
+            {
+                return;
+            }
+
+            if (args.First != this.Player.PlayerInteractionCollider)
             {
                 return;
             }
@@ -69,7 +72,12 @@ namespace Rituals.Interaction.Systems
 
         private void OnCollisionExited(object sender, CollisionEventArgs args)
         {
-            if (args.First != this.PlayerInteractionCollider)
+            if (this.Player == null)
+            {
+                return;
+            }
+
+            if (args.First != this.Player.PlayerInteractionCollider)
             {
                 return;
             }

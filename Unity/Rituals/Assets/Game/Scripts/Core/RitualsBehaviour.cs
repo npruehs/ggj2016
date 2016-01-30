@@ -6,6 +6,8 @@
 
 namespace Rituals.Core
 {
+    using Rituals.Player.Components;
+
     using UnityEngine;
 
     public abstract class RitualsBehaviour : MonoBehaviour
@@ -13,6 +15,8 @@ namespace Rituals.Core
         #region Properties
 
         protected EventManager EventManager { get; private set; }
+
+        protected PlayerComponent Player { get; private set; }
 
         #endregion
 
@@ -27,6 +31,20 @@ namespace Rituals.Core
         }
 
         protected virtual void Init()
+        {
+            this.Player = FindObjectOfType<PlayerComponent>();
+
+            if (this.Player != null)
+            {
+                this.OnPlayerAdded(this.Player);
+            }
+            else
+            {
+                Debug.LogError("No player found!");
+            }
+        }
+
+        protected virtual void OnPlayerAdded(PlayerComponent player)
         {
         }
 

@@ -16,11 +16,7 @@ namespace Rituals.Physics.Systems
     {
         #region Fields
 
-        public Camera Camera;
-
         public bool HideCursor;
-
-        public GameObject Player;
 
         public float Sensitivity;
 
@@ -64,12 +60,17 @@ namespace Rituals.Physics.Systems
 
         private void OnLookDirectionInput(object sender, LookDirectionInputEventArgs args)
         {
-            var cameraEuler = this.Camera.transform.localEulerAngles
+            if (this.Player == null)
+            {
+                return;
+            }
+
+            var cameraEuler = this.Player.PlayerCamera.transform.localEulerAngles
                               + new Vector3(
                                   -args.Delta.y * this.Sensitivity * SettingsStorage.MouseSensitivity,
                                   0.0f,
                                   0.0f);
-            this.Camera.transform.localRotation = Quaternion.Euler(cameraEuler);
+            this.Player.PlayerCamera.transform.localRotation = Quaternion.Euler(cameraEuler);
 
             var playerEuler = this.Player.transform.localEulerAngles
                               + new Vector3(

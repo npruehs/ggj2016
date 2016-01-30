@@ -17,8 +17,6 @@ namespace Rituals.Flow.Systems
     {
         #region Fields
 
-        public Collider PlayerInteractionCollider;
-
         private bool mayLeave;
 
         #endregion
@@ -43,12 +41,17 @@ namespace Rituals.Flow.Systems
 
         private void OnCollisionEntered(object sender, CollisionEventArgs args)
         {
+            if (this.Player == null)
+            {
+                return;
+            }
+
             if (!this.mayLeave)
             {
                 return;
             }
 
-            if (args.First != this.PlayerInteractionCollider)
+            if (args.First != this.Player.PlayerInteractionCollider)
             {
                 return;
             }

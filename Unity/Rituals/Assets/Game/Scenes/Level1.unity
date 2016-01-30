@@ -282,7 +282,7 @@ Prefab:
       objectReference: {fileID: 626741650}
     - target: {fileID: 22480442, guid: e33e17865a667184580f70609d27957e, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11406652, guid: e33e17865a667184580f70609d27957e, type: 2}
       propertyPath: Objectives.Array.data[0]

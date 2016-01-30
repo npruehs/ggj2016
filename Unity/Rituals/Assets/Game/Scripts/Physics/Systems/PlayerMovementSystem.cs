@@ -15,8 +15,6 @@ namespace Rituals.Physics.Systems
     {
         #region Fields
 
-        public GameObject Player;
-
         public float Speed = 1;
 
         #endregion
@@ -39,6 +37,11 @@ namespace Rituals.Physics.Systems
 
         private void OnMovementInput(object sender, MovementInputEventArgs args)
         {
+            if (this.Player == null)
+            {
+                return;
+            }
+
             this.Player.transform.position += this.Player.transform.TransformDirection(args.Direction) * Time.deltaTime
                                               * this.Speed;
         }

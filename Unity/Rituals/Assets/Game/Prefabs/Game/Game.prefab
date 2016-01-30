@@ -991,7 +991,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b440e95744d5aa4a9b0a47c502bc830, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerInteractionCollider: {fileID: 0}
 --- !u!114 &11459886
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1090,7 +1089,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cd296c683e52924f9006a42c71b2bb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerInteractionCollider: {fileID: 0}
 --- !u!114 &11472882
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1102,7 +1100,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecb3a936e31778849b445116850888d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 0}
   Speed: 1
 --- !u!114 &11475252
 MonoBehaviour:
@@ -1198,9 +1195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72a04d72565d73145805a0f5cfa35ff2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Camera: {fileID: 0}
   HideCursor: 1
-  Player: {fileID: 0}
   Sensitivity: 2
 --- !u!114 &11488990
 MonoBehaviour:
