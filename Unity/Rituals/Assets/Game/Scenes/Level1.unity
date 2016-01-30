@@ -5000,6 +5000,30 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e33e17865a667184580f70609d27957e, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1346937904 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 164668, guid: e33e17865a667184580f70609d27957e, type: 2}
+  m_PrefabInternal: {fileID: 1346937903}
+--- !u!114 &1346937905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1346937904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4821509e0eca604e892e057ad16214f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ChromaticAbberationStrength: 30
+  DestructionForce: 300
+  DestructionRadius: 100
+  ItemSizePressureFactor: 1
+  Objectives: []
+  PlayerSpeed: 1
+  PressureAppliedPerSecond: .100000001
+  PressureReducedPerObjective: .330000013
+  TwirlStrength: 10
 --- !u!1001 &1355098614
 Prefab:
   m_ObjectHideFlags: 0
