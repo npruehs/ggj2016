@@ -40,7 +40,7 @@ namespace Rituals.Pressure.Systems
 
         private void OnCurrentObjectiveChanged(object sender, CurrentObjectiveChangedEventArgs args)
         {
-            this.currentObjective = args.Objective;
+            this.currentObjective = args.NewObjective;
         }
 
         private void OnPressureChanged(object sender, PressureChangedEventArgs args)

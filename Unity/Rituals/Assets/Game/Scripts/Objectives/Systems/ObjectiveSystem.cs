@@ -15,7 +15,6 @@ namespace Rituals.Objectives.Systems
     using Rituals.Interaction.Util;
     using Rituals.Objectives.Data;
     using Rituals.Objectives.Events;
-    using Rituals.Physics.Components;
 
     using UnityEngine;
 
@@ -98,12 +97,18 @@ namespace Rituals.Objectives.Systems
 
         private void SetCurrentObjective(Objective objective)
         {
+            var oldObjective = this.currentObjective;
+
             this.currentObjective = objective;
 
             // Notify listeners.
             this.EventManager.OnCurrentObjectiveChanged(
                 this,
-                new CurrentObjectiveChangedEventArgs { Objective = objective != null ? objective.GameObject : null });
+                new CurrentObjectiveChangedEventArgs
+                {
+                    NewObjective = objective != null ? objective.GameObject : null,
+                    OldObjective = oldObjective != null ? oldObjective.GameObject : null
+                });
         }
 
         private void SetObjectiveState(Objective objective, ObjectiveState state)
@@ -146,7 +151,8 @@ namespace Rituals.Objectives.Systems
 
             if (interactableComponent == null)
             {
-                Debug.LogError(string.Format("Objective {0} does not have an InteractableComponent attached.", objective.name));
+                Debug.LogError(
+                    string.Format("Objective {0} does not have an InteractableComponent attached.", objective.name));
                 return false;
             }
 

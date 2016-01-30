@@ -39,6 +39,11 @@ namespace Rituals.Pressure.Systems
 
         private void OnCurrentObjectiveChanged(object sender, CurrentObjectiveChangedEventArgs args)
         {
+            if (args.OldObjective == null)
+            {
+                return;
+            }
+
             this.SetPressure(this.pressure - this.LevelSettings.PressureReducedPerObjective);
         }
 

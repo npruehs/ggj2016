@@ -14,7 +14,9 @@ namespace Rituals.Objectives.Events
     {
         #region Fields
 
-        public GameObject Objective;
+        public GameObject NewObjective;
+
+        public GameObject OldObjective;
 
         #endregion
     }

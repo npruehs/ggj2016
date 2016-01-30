@@ -40,7 +40,7 @@ namespace Rituals.Objectives.Systems
 
         private void OnCurrentObjectiveChanged(object sender, CurrentObjectiveChangedEventArgs args)
         {
-            this.currentObjective = args.Objective;
+            this.currentObjective = args.NewObjective;
         }
 
         private void Update()
