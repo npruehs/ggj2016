@@ -1121,15 +1121,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ChromaticAbberationStrength: 30
-  DestructionForce: 300
+  DestructionForce: 200
   DestructionRadius: 100
   ItemSizePressureFactor: .25
   Objectives:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  PlayerSpeed: 1
-  PressureAppliedPerSecond: .100000001
+  PlayerSpeed: 1.5
+  PressureAppliedPerSecond: .0329999998
   PressureReducedPerObjective: .330000013
   TwirlStrength: 10
 --- !u!114 &11449066
