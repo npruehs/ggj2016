@@ -108,7 +108,8 @@ namespace Rituals.Editor
             // Add interactable component.
             if (newObstacle.GetComponent<InteractableComponent>() == null)
             {
-                newObstacle.AddComponent<InteractableComponent>();
+                var interactableComponent = newObstacle.AddComponent<InteractableComponent>();
+                interactableComponent.Interaction = newObstacle.name;
             }
 
             // Add interaction collider.

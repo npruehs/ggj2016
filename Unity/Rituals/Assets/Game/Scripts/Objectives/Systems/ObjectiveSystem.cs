@@ -91,6 +91,10 @@ namespace Rituals.Objectives.Systems
                 // Finish objective.
                 this.SetObjectiveState(this.currentObjective, ObjectiveState.Complete);
 
+                // Prevent further interaction.
+                var interactableComponent = this.currentObjective.GameObject.GetComponent<InteractableComponent>();
+                interactableComponent.Enabled = false;
+
                 // Select next objective.
                 var nextObjective = this.objectives.FirstOrDefault(obj => obj.State != ObjectiveState.Complete);
 

@@ -17,7 +17,7 @@ namespace Rituals.Input.Systems
 
         private void Update()
         {
-            if (Input.GetButton("Use"))
+            if (Input.GetButtonUp("Use"))
             {
                 this.EventManager.OnInteractionInput(this, new InteractionInputEventArgs());
             }

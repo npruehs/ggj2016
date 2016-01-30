@@ -6,13 +6,13 @@
 
 namespace Rituals.Interaction.Events
 {
-    using UnityEngine;
+    using Rituals.Interaction.Components;
 
     public class SelectedInteractableChangedEventArgs
     {
         #region Fields
 
-        public GameObject Interactable;
+        public InteractableComponent Interactable;
 
         #endregion
     }

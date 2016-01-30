@@ -9,6 +9,7 @@ namespace Rituals.Objectives.Systems
     using System.Collections.Generic;
 
     using Rituals.Core;
+    using Rituals.Interaction.Components;
     using Rituals.Objectives.Data;
     using Rituals.Objectives.Events;
 
@@ -52,6 +53,13 @@ namespace Rituals.Objectives.Systems
                 return;
             }
 
+            var interactableComponent = args.Objective.GetComponent<InteractableComponent>();
+
+            if (interactableComponent == null)
+            {
+                return;
+            }
+
             var textObject = Instantiate(this.ObjectiveTextPrefab);
             textObject.transform.SetParent(this.ObjectiveTextRoot, false);
 
@@ -59,7 +67,7 @@ namespace Rituals.Objectives.Systems
 
             if (text != null)
             {
-                text.text = string.Format("{0}. {1}", args.Index, args.Objective.name);
+                text.text = string.Format("{0}. {1}", args.Index, interactableComponent.Interaction);
 
                 this.objectiveTexts.Add(args.Objective, text);
             }
