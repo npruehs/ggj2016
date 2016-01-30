@@ -1123,6 +1123,7 @@ MonoBehaviour:
   ChromaticAbberationStrength: 30
   DestructionForce: 300
   DestructionRadius: 100
+  ItemSizePressureFactor: .25
   Objectives:
   - {fileID: 0}
   - {fileID: 0}

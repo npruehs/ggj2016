@@ -47,7 +47,10 @@ namespace Rituals.Pressure.Systems
         {
             if (this.currentObjective != null)
             {
-                this.currentObjective.transform.localScale = Vector3.one * (1 + args.Pressure);
+                this.currentObjective.transform.localScale = Vector3.one
+                                                             * (1
+                                                                + args.Pressure
+                                                                * this.LevelSettings.ItemSizePressureFactor);
             }
         }
 

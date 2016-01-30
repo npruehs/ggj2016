@@ -18,6 +18,8 @@ namespace Rituals.Settings.Data
 
         public float DestructionRadius = 100.0f;
 
+        public float ItemSizePressureFactor = 1.0f;
+
         public GameObject[] Objectives;
 
         public float PlayerSpeed = 1;
