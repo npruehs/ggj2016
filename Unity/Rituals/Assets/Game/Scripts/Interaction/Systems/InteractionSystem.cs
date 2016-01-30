@@ -12,13 +12,11 @@ namespace Rituals.Interaction.Systems
     using Rituals.Interaction.Events;
     using Rituals.Physics.Events;
 
-    using UnityEngine;
-
     public class InteractionSystem : RitualsBehaviour
     {
         #region Fields
 
-        private GameObject selectedInteractable;
+        private InteractableComponent selectedInteractable;
 
         #endregion
 
@@ -67,7 +65,7 @@ namespace Rituals.Interaction.Systems
                 new InteractableEnteredRangeEventArgs { GameObject = interactable.gameObject });
 
             // Set reference.
-            this.SelectInteractable(interactable.gameObject);
+            this.SelectInteractable(interactable);
         }
 
         private void OnCollisionExited(object sender, CollisionEventArgs args)
@@ -103,6 +101,27 @@ namespace Rituals.Interaction.Systems
 
         private void OnInteractionInput(object sender, InteractionInputEventArgs args)
         {
+            this.UseInteractable();
+        }
+
+        private void SelectInteractable(InteractableComponent interactable)
+        {
+            this.selectedInteractable = interactable;
+
+            // Notify listeners.
+            this.EventManager.OnSelectedInteractableChanged(
+                this,
+                new SelectedInteractableChangedEventArgs { Interactable = this.selectedInteractable.gameObject });
+
+            // Check if auto.
+            if (this.selectedInteractable.Auto)
+            {
+                this.UseInteractable();
+            }
+        }
+
+        private void UseInteractable()
+        {
             if (this.selectedInteractable == null)
             {
                 return;
@@ -110,17 +129,7 @@ namespace Rituals.Interaction.Systems
 
             this.EventManager.OnInteractableUsed(
                 this,
-                new InteractableUsedEventArgs { GameObject = this.selectedInteractable });
-        }
-
-        private void SelectInteractable(GameObject interactable)
-        {
-            this.selectedInteractable = interactable;
-
-            // Notify listeners.
-            this.EventManager.OnSelectedInteractableChanged(
-                this,
-                new SelectedInteractableChangedEventArgs { Interactable = this.selectedInteractable });
+                new InteractableUsedEventArgs { GameObject = this.selectedInteractable.gameObject });
         }
 
         #endregion

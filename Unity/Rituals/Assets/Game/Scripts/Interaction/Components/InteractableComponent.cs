@@ -10,5 +10,10 @@ namespace Rituals.Interaction.Components
 
     public class InteractableComponent : MonoBehaviour
     {
+        #region Fields
+
+        public bool Auto;
+
+        #endregion
     }
 }
