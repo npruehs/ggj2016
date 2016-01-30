@@ -15,7 +15,6 @@ namespace Rituals.Objectives.Systems
     using Rituals.Interaction.Util;
     using Rituals.Objectives.Data;
     using Rituals.Objectives.Events;
-    using Rituals.Physics.Components;
 
     using UnityEngine;
 
@@ -60,12 +59,7 @@ namespace Rituals.Objectives.Systems
                     new ObjectiveAddedEventArgs { Index = this.objectives.Count, Objective = objective });
             }
 
-            this.currentObjective = this.objectives.FirstOrDefault();
-
-            if (this.currentObjective != null)
-            {
-                this.SetObjectiveState(this.currentObjective, ObjectiveState.Active);
-            }
+            this.SetObjectiveState(this.objectives.FirstOrDefault(), ObjectiveState.Active);
         }
 
         protected override void RemoveListeners()
@@ -96,18 +90,39 @@ namespace Rituals.Objectives.Systems
                 }
                 else
                 {
-                    this.currentObjective = null;
+                    this.SetCurrentObjective(null);
                 }
             }
         }
 
+        private void SetCurrentObjective(Objective objective)
+        {
+            var oldObjective = this.currentObjective;
+
+            this.currentObjective = objective;
+
+            // Notify listeners.
+            this.EventManager.OnCurrentObjectiveChanged(
+                this,
+                new CurrentObjectiveChangedEventArgs
+                {
+                    NewObjective = objective != null ? objective.GameObject : null,
+                    OldObjective = oldObjective != null ? oldObjective.GameObject : null
+                });
+        }
+
         private void SetObjectiveState(Objective objective, ObjectiveState state)
         {
+            if (objective == null)
+            {
+                return;
+            }
+
             objective.State = state;
 
             if (objective.State == ObjectiveState.Active)
             {
-                this.currentObjective = objective;
+                this.SetCurrentObjective(objective);
             }
 
             // Notify listeners.
@@ -136,7 +151,8 @@ namespace Rituals.Objectives.Systems
 
             if (interactableComponent == null)
             {
-                Debug.LogError(string.Format("Objective {0} does not have an InteractableComponent attached.", objective.name));
+                Debug.LogError(
+                    string.Format("Objective {0} does not have an InteractableComponent attached.", objective.name));
                 return false;
             }
 

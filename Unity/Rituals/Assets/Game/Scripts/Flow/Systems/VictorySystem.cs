@@ -24,6 +24,14 @@ namespace Rituals.Flow.Systems
 
         #region Methods
 
+        protected override void AddListeners()
+        {
+            base.AddListeners();
+
+            this.EventManager.CollisionEntered += this.OnCollisionEntered;
+            this.EventManager.ObjectiveStateChanged += this.OnObjectiveStateChanged;
+        }
+
         protected override void Init()
         {
             base.Init();
@@ -37,14 +45,6 @@ namespace Rituals.Flow.Systems
             }
 
             InteractionUtils.IsInteractive(exit.gameObject);
-        }
-
-        protected override void AddListeners()
-        {
-            base.AddListeners();
-
-            this.EventManager.CollisionEntered += this.OnCollisionEntered;
-            this.EventManager.ObjectiveStateChanged += this.OnObjectiveStateChanged;
         }
 
         protected override void RemoveListeners()

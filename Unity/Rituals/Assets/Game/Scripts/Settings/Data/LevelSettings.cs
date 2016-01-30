@@ -14,6 +14,12 @@ namespace Rituals.Settings.Data
 
         public float ChromaticAbberationStrength = 30.0f;
 
+        public float DestructionForce = 300.0f;
+
+        public float DestructionRadius = 100.0f;
+
+        public float ItemSizePressureFactor = 1.0f;
+
         public GameObject[] Objectives;
 
         public float PlayerSpeed = 1;

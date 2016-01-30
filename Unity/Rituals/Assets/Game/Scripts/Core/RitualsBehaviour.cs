@@ -69,14 +69,17 @@ namespace Rituals.Core
         {
         }
 
+        private void OnDestroy()
+        {
+            this.DeInit();
+        }
+
         private void OnDisable()
         {
             if (this.EventManager != null)
             {
                 this.RemoveListeners();
             }
-
-            this.DeInit();
         }
 
         private void OnEnable()
@@ -87,7 +90,10 @@ namespace Rituals.Core
             {
                 this.AddListeners();
             }
+        }
 
+        private void Start()
+        {
             this.Init();
         }
 

@@ -7,7 +7,6 @@
 namespace Rituals.Pressure.Systems
 {
     using Rituals.Core;
-    using Rituals.Objectives.Data;
     using Rituals.Objectives.Events;
     using Rituals.Pressure.Events;
 
@@ -28,7 +27,7 @@ namespace Rituals.Pressure.Systems
             base.AddListeners();
 
             this.EventManager.PressureChanged += this.OnPressureChanged;
-            this.EventManager.ObjectiveStateChanged += this.OnObjectiveStateChanged;
+            this.EventManager.CurrentObjectiveChanged += this.OnCurrentObjectiveChanged;
         }
 
         protected override void RemoveListeners()
@@ -36,27 +35,22 @@ namespace Rituals.Pressure.Systems
             base.RemoveListeners();
 
             this.EventManager.PressureChanged -= this.OnPressureChanged;
-            this.EventManager.ObjectiveStateChanged -= this.OnObjectiveStateChanged;
+            this.EventManager.CurrentObjectiveChanged -= this.OnCurrentObjectiveChanged;
         }
 
-        private void OnObjectiveStateChanged(object sender, ObjectiveStateChangedEventArgs args)
+        private void OnCurrentObjectiveChanged(object sender, CurrentObjectiveChangedEventArgs args)
         {
-            if (args.Objective == this.currentObjective && args.State == ObjectiveState.Complete)
-            {
-                this.currentObjective = null;
-            }
-
-            if (args.State == ObjectiveState.Active)
-            {
-                this.currentObjective = args.Objective;
-            }
+            this.currentObjective = args.NewObjective;
         }
 
         private void OnPressureChanged(object sender, PressureChangedEventArgs args)
         {
             if (this.currentObjective != null)
             {
-                this.currentObjective.transform.localScale = Vector3.one * (1 + args.Pressure);
+                this.currentObjective.transform.localScale = Vector3.one
+                                                             * (1
+                                                                + args.Pressure
+                                                                * this.LevelSettings.ItemSizePressureFactor);
             }
         }
 
