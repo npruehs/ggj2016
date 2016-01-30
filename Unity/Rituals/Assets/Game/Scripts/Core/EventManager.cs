@@ -8,6 +8,7 @@ namespace Rituals.Core
 {
     using Rituals.Input.Events;
     using Rituals.Interaction.Events;
+    using Rituals.Objectives.Events;
     using Rituals.Physics.Events;
     using Rituals.Pressure.Events;
 
@@ -33,6 +34,8 @@ namespace Rituals.Core
 
         public delegate void MovementInputDelegate(object sender, MovementInputEventArgs args);
 
+        public delegate void ObjectiveStateChangedDelegate(object sender, ObjectiveStateChangedEventArgs args);
+
         public delegate void PressureChangedDelegate(object sender, PressureChangedEventArgs args);
 
         #endregion
@@ -56,6 +59,8 @@ namespace Rituals.Core
         public event InteractableUsedDelegate InteractableUsed;
 
         public event PressureChangedDelegate PressureChanged;
+
+        public event ObjectiveStateChangedDelegate ObjectiveStateChanged;
 
         #endregion
 
@@ -127,6 +132,15 @@ namespace Rituals.Core
         public void OnMovementInput(object sender, MovementInputEventArgs args)
         {
             var handler = this.MovementInput;
+            if (handler != null)
+            {
+                handler(sender, args);
+            }
+        }
+
+        public void OnObjectiveStateChanged(object sender, ObjectiveStateChangedEventArgs args)
+        {
+            var handler = this.ObjectiveStateChanged;
             if (handler != null)
             {
                 handler(sender, args);
