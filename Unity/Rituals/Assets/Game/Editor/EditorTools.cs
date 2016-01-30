@@ -9,6 +9,7 @@ namespace Rituals.Editor
     using System.Collections.Generic;
     using System.Linq;
 
+    using Rituals.Flow.Components;
     using Rituals.Interaction.Components;
     using Rituals.Physics.Components;
     using Rituals.Settings.Data;
@@ -26,6 +27,26 @@ namespace Rituals.Editor
         #endregion
 
         #region Public Methods and Operators
+
+        [MenuItem("OCD/Make Exit")]
+        public static void MakeExit()
+        {
+            var newExit = Selection.activeGameObject;
+
+            if (newExit == null)
+            {
+                return;
+            }
+
+            // Add exit component.
+            if (newExit.GetComponent<ExitComponent>() == null)
+            {
+                newExit.AddComponent<ExitComponent>();
+            }
+
+            // Add interaction collider.
+            MakeInteractable(newExit);
+        }
 
         [MenuItem("OCD/Make Objective")]
         public static void MakeObjective()
@@ -60,7 +81,16 @@ namespace Rituals.Editor
             }
 
             // Add interaction collider.
-            if (newObjective.GetComponentInChildren<ColliderComponent>() == null)
+            MakeInteractable(newObjective);
+        }
+
+        #endregion
+
+        #region Methods
+
+        private static void MakeInteractable(GameObject gameObject)
+        {
+            if (gameObject.GetComponentInChildren<ColliderComponent>() == null)
             {
                 var allColliderAssets = Resources.FindObjectsOfTypeAll<ColliderComponent>();
                 var interactionColliderPrefab =
@@ -76,7 +106,7 @@ namespace Rituals.Editor
                 }
 
                 var interactionCollider = Object.Instantiate(interactionColliderPrefab);
-                interactionCollider.transform.SetParent(newObjective.transform);
+                interactionCollider.transform.SetParent(gameObject.transform);
             }
         }
 
