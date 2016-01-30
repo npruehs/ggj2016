@@ -69,7 +69,7 @@ namespace Rituals.Core
         {
         }
 
-        private void Destroy()
+        private void OnDestroy()
         {
             this.DeInit();
         }
