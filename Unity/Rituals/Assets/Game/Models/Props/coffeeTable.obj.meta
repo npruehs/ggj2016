@@ -7,11 +7,16 @@ ModelImporter:
   fileIDToRecycleName:
     100000: //RootNode
     100002: SofaTable:Table_045Glass
+    100004: Table_045Glass
     400000: //RootNode
     400002: SofaTable:Table_045Glass
+    400004: Table_045Glass
     2300000: SofaTable:Table_045Glass
+    2300002: Table_045Glass
     3300000: SofaTable:Table_045Glass
+    3300002: Table_045Glass
     4300000: SofaTable:Table_045Glass
+    4300002: Table_045Glass
   materials:
     importMaterials: 1
     materialName: 0

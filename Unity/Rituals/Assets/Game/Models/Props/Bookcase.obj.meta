@@ -7,11 +7,21 @@ ModelImporter:
   fileIDToRecycleName:
     100000: //RootNode
     100002: tv:silver
+    100004: polySurface41
+    100006: polySurface42
     400000: //RootNode
     400002: tv:silver
+    400004: polySurface41
+    400006: polySurface42
     2300000: tv:silver
+    2300002: polySurface41
+    2300004: polySurface42
     3300000: tv:silver
+    3300002: polySurface41
+    3300004: polySurface42
     4300000: tv:silver
+    4300002: polySurface41
+    4300004: polySurface42
   materials:
     importMaterials: 1
     materialName: 0
