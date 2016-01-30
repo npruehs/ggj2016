@@ -68,10 +68,8 @@ namespace Rituals.Editor
 
             if (!levelSettings.Objectives.Contains(newObjective))
             {
-                var newObjectives = new List<GameObject>(levelSettings.Objectives);
-                newObjectives.Add(newObjective);
-                newObjectives.RemoveAll(obj => obj == null);
-                levelSettings.Objectives = newObjectives.ToArray();
+                levelSettings.Objectives.Add(newObjective);
+                levelSettings.Objectives.RemoveAll(obj => obj == null);
             }
 
             // Add interactable component.

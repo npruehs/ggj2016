@@ -6,6 +6,8 @@
 
 namespace Rituals.Settings.Data
 {
+    using System.Collections.Generic;
+
     using UnityEngine;
 
     public class LevelSettings : MonoBehaviour
@@ -20,7 +22,7 @@ namespace Rituals.Settings.Data
 
         public float ItemSizePressureFactor = 1.0f;
 
-        public GameObject[] Objectives;
+        public List<GameObject> Objectives = new List<GameObject>();
 
         public float PlayerSpeed = 1;
 

@@ -364,7 +364,6 @@ GameObject:
   - 4: {fileID: 434792}
   - 114: {fileID: 11459886}
   - 114: {fileID: 11463656}
-  - 114: {fileID: 11448334}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -1109,29 +1108,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &11448334
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 164668}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4821509e0eca604e892e057ad16214f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ChromaticAbberationStrength: 30
-  DestructionForce: 200
-  DestructionRadius: 100
-  ItemSizePressureFactor: .25
-  Objectives:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  PlayerSpeed: 1.5
-  PressureAppliedPerSecond: .0329999998
-  PressureReducedPerObjective: .330000013
-  TwirlStrength: 10
 --- !u!114 &11449066
 MonoBehaviour:
   m_ObjectHideFlags: 1
