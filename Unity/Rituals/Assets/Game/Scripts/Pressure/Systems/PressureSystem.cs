@@ -9,6 +9,7 @@ namespace Rituals.Pressure.Systems
     using Rituals.Core;
     using Rituals.Objectives.Events;
     using Rituals.Pressure.Events;
+    using Rituals.Settings.Storage;
 
     using UnityEngine;
 
@@ -56,7 +57,8 @@ namespace Rituals.Pressure.Systems
 
         private void Update()
         {
-            this.SetPressure(this.pressure + this.PressureAppliedPerSecond * Time.deltaTime);
+            this.SetPressure(
+                this.pressure + this.PressureAppliedPerSecond * Time.deltaTime * ((int)SettingsStorage.Difficulty + 1));
         }
 
         #endregion
