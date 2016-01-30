@@ -26,6 +26,8 @@ namespace Rituals.Core
 
         public delegate void ConcedeInputDelegate(object sender, EventArgs args);
 
+        public delegate void CurrentObjectiveChangedDelegate(object sender, CurrentObjectiveChangedEventArgs args);
+
         public delegate void InteractableEnteredRangeDelegate(object sender, InteractableEnteredRangeEventArgs args);
 
         public delegate void InteractableLeftRangeDelegate(object sender, InteractableLeftRangeEventArgs args);
@@ -51,6 +53,8 @@ namespace Rituals.Core
         #endregion
 
         #region Events
+
+        public event CurrentObjectiveChangedDelegate CurrentObjectiveChanged;
 
         public event MovementInputDelegate MovementInput;
 
@@ -106,6 +110,15 @@ namespace Rituals.Core
             if (handler != null)
             {
                 handler(sender, eventArgs);
+            }
+        }
+
+        public void OnCurrentObjectiveChanged(object sender, CurrentObjectiveChangedEventArgs args)
+        {
+            var handler = this.CurrentObjectiveChanged;
+            if (handler != null)
+            {
+                handler(sender, args);
             }
         }
 

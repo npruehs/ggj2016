@@ -27,17 +27,17 @@ namespace Rituals.Pressure.Systems
         {
             base.AddListeners();
 
-            this.EventManager.ObjectiveStateChanged += this.OnObjectiveStateChanged;
+            this.EventManager.CurrentObjectiveChanged += this.OnCurrentObjectiveChanged;
         }
 
         protected override void RemoveListeners()
         {
             base.RemoveListeners();
 
-            this.EventManager.ObjectiveStateChanged -= this.OnObjectiveStateChanged;
+            this.EventManager.CurrentObjectiveChanged -= this.OnCurrentObjectiveChanged;
         }
 
-        private void OnObjectiveStateChanged(object sender, ObjectiveStateChangedEventArgs args)
+        private void OnCurrentObjectiveChanged(object sender, CurrentObjectiveChangedEventArgs args)
         {
             this.SetPressure(this.pressure - this.LevelSettings.PressureReducedPerObjective);
         }
