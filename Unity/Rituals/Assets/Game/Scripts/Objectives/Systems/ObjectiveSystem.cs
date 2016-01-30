@@ -10,9 +10,11 @@ namespace Rituals.Objectives.Systems
     using System.Linq;
 
     using Rituals.Core;
+    using Rituals.Interaction.Components;
     using Rituals.Interaction.Events;
     using Rituals.Objectives.Data;
     using Rituals.Objectives.Events;
+    using Rituals.Physics.Components;
 
     using UnityEngine;
 
@@ -41,6 +43,12 @@ namespace Rituals.Objectives.Systems
 
             foreach (var objective in this.LevelSettings.Objectives)
             {
+                // Verify objective.
+                if (!this.VerifyObjective(objective))
+                {
+                    continue;
+                }
+
                 this.objectives.Add(new Objective { GameObject = objective, State = ObjectiveState.Inactive });
 
                 Debug.Log(string.Format("Objective added: {0}.", objective.name));
@@ -113,6 +121,49 @@ namespace Rituals.Objectives.Systems
                 });
 
             Debug.Log(string.Format("Objective {0} changed to {1}.", objective, state));
+        }
+
+        private bool VerifyObjective(GameObject objective)
+        {
+            if (objective == null)
+            {
+                Debug.LogError(string.Format("One of the objectives is null."));
+                return false;
+            }
+
+            var interactableComponent = objective.GetComponent<InteractableComponent>();
+
+            if (interactableComponent == null)
+            {
+                Debug.LogError(string.Format("Objective {0} does not have an InteractableComponent attached.", objective.name));
+                return false;
+            }
+
+            var colliderComponent = objective.GetComponentInChildren<ColliderComponent>();
+
+            if (colliderComponent == null)
+            {
+                Debug.LogError(string.Format("Objective {0} does not have an ColliderComponent attached.", objective.name));
+                return false;
+            }
+
+            var objectiveCollider = colliderComponent.GetComponent<Collider>();
+
+            if (objectiveCollider == null)
+            {
+                Debug.LogError(
+                    string.Format("Objective {0} does not have a Collider attached at the ColliderComponent object.", objective.name));
+                return false;
+            }
+
+            if (!objectiveCollider.isTrigger)
+            {
+                Debug.LogError(
+                    string.Format("Objective {0} interaction collider is not set up as Trigger.", objective.name));
+                return false;
+            }
+
+            return true;
         }
 
         #endregion
