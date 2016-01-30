@@ -81,13 +81,24 @@ namespace Rituals.Flow.Systems
             }
 
             // Victory!
-            ProgressionStorage.SetLevelComplete(this.LevelSettings.LevelIndex);
-            Application.LoadLevel("LevelSelection");
+            this.Victory();
         }
 
         private void OnObjectiveStateChanged(object sender, ObjectiveStateChangedEventArgs args)
         {
             this.mayLeave = args.CompletedObjectives == args.TotalObjectives;
+
+            if (this.mayLeave)
+            {
+                // Victory!
+                this.Victory();
+            }
+        }
+
+        private void Victory()
+        {
+            ProgressionStorage.SetLevelComplete(this.LevelSettings.LevelIndex);
+            Application.LoadLevel("LevelSelection");
         }
 
         #endregion
