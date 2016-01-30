@@ -315,6 +315,7 @@ GameObject:
   - 4: {fileID: 434792}
   - 114: {fileID: 11459886}
   - 114: {fileID: 11463656}
+  - 114: {fileID: 11448334}
   m_Layer: 0
   m_Name: Game
   m_TagString: Untagged
@@ -838,7 +839,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca203c8be1857b24b8911c3b2d2ca408, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Objectives: []
 --- !u!114 &11415974
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -966,6 +966,21 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &11448334
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 164668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4821509e0eca604e892e057ad16214f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Objectives: []
+  PlayerSpeed: 1
+  PressureAppliedPerSecond: .100000001
+  PressureReducedPerObjective: .330000013
 --- !u!114 &11449066
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1100,7 +1115,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecb3a936e31778849b445116850888d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 1
 --- !u!114 &11475252
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1195,8 +1209,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72a04d72565d73145805a0f5cfa35ff2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HideCursor: 1
-  Sensitivity: 2
 --- !u!114 &11488990
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1208,8 +1220,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ca1f1b30d7a12d4d86a4fde52c4f9dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PressureAppliedPerSecond: .100000001
-  PressureReducedPerObjective: .330000013
 --- !u!114 &11490828
 MonoBehaviour:
   m_ObjectHideFlags: 1

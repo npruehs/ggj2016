@@ -17,10 +17,6 @@ namespace Rituals.Pressure.Systems
     {
         #region Fields
 
-        public float PressureAppliedPerSecond;
-
-        public float PressureReducedPerObjective;
-
         private float pressure;
 
         #endregion
@@ -43,13 +39,13 @@ namespace Rituals.Pressure.Systems
 
         private void OnObjectiveStateChanged(object sender, ObjectiveStateChangedEventArgs args)
         {
-            this.SetPressure(this.pressure - this.PressureReducedPerObjective);
+            this.SetPressure(this.pressure - this.LevelSettings.PressureReducedPerObjective);
         }
 
-        private void SetPressure(float pressure)
+        private void SetPressure(float newPressure)
         {
             // Clamp.
-            this.pressure = Mathf.Clamp01(pressure);
+            this.pressure = Mathf.Clamp01(newPressure);
 
             // Notify listeners.
             this.EventManager.OnPressureChanged(this, new PressureChangedEventArgs { Pressure = this.pressure });
@@ -58,7 +54,8 @@ namespace Rituals.Pressure.Systems
         private void Update()
         {
             this.SetPressure(
-                this.pressure + this.PressureAppliedPerSecond * Time.deltaTime * ((int)SettingsStorage.Difficulty + 1));
+                this.pressure
+                + this.LevelSettings.PressureAppliedPerSecond * Time.deltaTime * ((int)SettingsStorage.Difficulty + 1));
         }
 
         #endregion

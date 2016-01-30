@@ -3,6 +3,7 @@
 //   Copyright (c) Slash Games. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
+
 namespace Rituals.Flow.Components
 {
     using UnityEngine;

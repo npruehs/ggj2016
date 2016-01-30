@@ -224,7 +224,7 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 11406652, guid: e33e17865a667184580f70609d27957e, type: 2}
+    - target: {fileID: 11448334, guid: e33e17865a667184580f70609d27957e, type: 2}
       propertyPath: Objectives.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -260,46 +260,17 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11471264, guid: e33e17865a667184580f70609d27957e, type: 2}
-      propertyPath: PlayerInteractionCollider
-      value: 
-      objectReference: {fileID: 1059424264}
-    - target: {fileID: 11456672, guid: e33e17865a667184580f70609d27957e, type: 2}
-      propertyPath: PlayerInteractionCollider
-      value: 
-      objectReference: {fileID: 1059424264}
-    - target: {fileID: 11472882, guid: e33e17865a667184580f70609d27957e, type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 626741650}
-    - target: {fileID: 11487500, guid: e33e17865a667184580f70609d27957e, type: 2}
-      propertyPath: Camera
-      value: 
-      objectReference: {fileID: 629698620}
-    - target: {fileID: 11487500, guid: e33e17865a667184580f70609d27957e, type: 2}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 626741650}
     - target: {fileID: 22480442, guid: e33e17865a667184580f70609d27957e, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 11406652, guid: e33e17865a667184580f70609d27957e, type: 2}
+    - target: {fileID: 11448334, guid: e33e17865a667184580f70609d27957e, type: 2}
       propertyPath: Objectives.Array.data[0]
       value: 
       objectReference: {fileID: 1981209162}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e33e17865a667184580f70609d27957e, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &626741650 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 189356, guid: 596b7ef4a03740e409448f7bc5745759, type: 2}
-  m_PrefabInternal: {fileID: 153176774}
---- !u!20 &629698620 stripped
-Camera:
-  m_PrefabParentObject: {fileID: 2099722, guid: 596b7ef4a03740e409448f7bc5745759,
-    type: 2}
-  m_PrefabInternal: {fileID: 153176774}
 --- !u!1 &910111676
 GameObject:
   m_ObjectHideFlags: 0
@@ -425,11 +396,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &1059424264 stripped
-SphereCollider:
-  m_PrefabParentObject: {fileID: 13512808, guid: 596b7ef4a03740e409448f7bc5745759,
-    type: 2}
-  m_PrefabInternal: {fileID: 153176774}
 --- !u!1 &1059856699
 GameObject:
   m_ObjectHideFlags: 0

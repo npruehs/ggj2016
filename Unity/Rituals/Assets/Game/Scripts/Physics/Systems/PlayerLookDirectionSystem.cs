@@ -14,14 +14,6 @@ namespace Rituals.Physics.Systems
 
     public class PlayerLookDirectionSystem : RitualsBehaviour
     {
-        #region Fields
-
-        public bool HideCursor;
-
-        public float Sensitivity;
-
-        #endregion
-
         #region Methods
 
         protected override void AddListeners()
@@ -31,24 +23,18 @@ namespace Rituals.Physics.Systems
             this.EventManager.LookDirectionInput += this.OnLookDirectionInput;
         }
 
-        protected override void Init()
-        {
-            base.Init();
-
-            if (this.HideCursor)
-            {
-                Cursor.visible = false;
-            }
-        }
-
         protected override void DeInit()
         {
             base.DeInit();
 
-            if (this.HideCursor)
-            {
-                Cursor.visible = true;
-            }
+            Cursor.visible = true;
+        }
+
+        protected override void Init()
+        {
+            base.Init();
+
+            Cursor.visible = false;
         }
 
         protected override void RemoveListeners()
@@ -66,17 +52,11 @@ namespace Rituals.Physics.Systems
             }
 
             var cameraEuler = this.Player.PlayerCamera.transform.localEulerAngles
-                              + new Vector3(
-                                  -args.Delta.y * this.Sensitivity * SettingsStorage.MouseSensitivity,
-                                  0.0f,
-                                  0.0f);
+                              + new Vector3(-args.Delta.y * SettingsStorage.MouseSensitivity, 0.0f, 0.0f);
             this.Player.PlayerCamera.transform.localRotation = Quaternion.Euler(cameraEuler);
 
             var playerEuler = this.Player.transform.localEulerAngles
-                              + new Vector3(
-                                  0.0f,
-                                  args.Delta.x * this.Sensitivity * SettingsStorage.MouseSensitivity,
-                                  0.0f);
+                              + new Vector3(0.0f, args.Delta.x * SettingsStorage.MouseSensitivity, 0.0f);
             this.Player.transform.localRotation = Quaternion.Euler(playerEuler);
         }
 

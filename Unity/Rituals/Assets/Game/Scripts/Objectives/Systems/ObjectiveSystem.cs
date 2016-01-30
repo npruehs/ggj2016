@@ -22,8 +22,6 @@ namespace Rituals.Objectives.Systems
 
         private readonly List<Objective> objectives = new List<Objective>();
 
-        public GameObject[] Objectives;
-
         private Objective currentObjective;
 
         #endregion
@@ -41,7 +39,7 @@ namespace Rituals.Objectives.Systems
         {
             base.Init();
 
-            foreach (var objective in this.Objectives)
+            foreach (var objective in this.LevelSettings.Objectives)
             {
                 this.objectives.Add(new Objective { GameObject = objective, State = ObjectiveState.Inactive });
 

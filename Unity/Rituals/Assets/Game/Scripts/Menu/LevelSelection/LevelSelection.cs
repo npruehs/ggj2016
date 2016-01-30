@@ -30,7 +30,7 @@ namespace Rituals.Menu.LevelSelection
                 var levelButton = Instantiate(this.LevelButtonPrefab);
                 levelButton.transform.SetParent(this.transform);
                 levelButton.transform.localScale = Vector3.one;
-                
+
                 var loadSceneOnClick = levelButton.GetComponent<LoadSceneOnClick>();
                 if (loadSceneOnClick != null)
                 {

@@ -13,12 +13,6 @@ namespace Rituals.Physics.Systems
 
     public class PlayerMovementSystem : RitualsBehaviour
     {
-        #region Fields
-
-        public float Speed = 1;
-
-        #endregion
-
         #region Methods
 
         protected override void AddListeners()
@@ -43,7 +37,7 @@ namespace Rituals.Physics.Systems
             }
 
             this.Player.transform.position += this.Player.transform.TransformDirection(args.Direction) * Time.deltaTime
-                                              * this.Speed;
+                                              * this.LevelSettings.PlayerSpeed;
         }
 
         #endregion

@@ -7,6 +7,7 @@
 namespace Rituals.Core
 {
     using Rituals.Player.Components;
+    using Rituals.Settings.Data;
 
     using UnityEngine;
 
@@ -15,6 +16,8 @@ namespace Rituals.Core
         #region Properties
 
         protected EventManager EventManager { get; private set; }
+
+        protected LevelSettings LevelSettings { get; private set; }
 
         protected PlayerComponent Player { get; private set; }
 
@@ -33,6 +36,7 @@ namespace Rituals.Core
         protected virtual void Init()
         {
             this.Player = FindObjectOfType<PlayerComponent>();
+            this.LevelSettings = FindObjectOfType<LevelSettings>();
 
             if (this.Player != null)
             {
@@ -42,6 +46,19 @@ namespace Rituals.Core
             {
                 Debug.LogError("No player found!");
             }
+
+            if (this.LevelSettings != null)
+            {
+                this.OnLevelSettingsChanged(this.LevelSettings);
+            }
+            else
+            {
+                Debug.LogError("No level settings found!");
+            }
+        }
+
+        protected virtual void OnLevelSettingsChanged(LevelSettings levelSettings)
+        {
         }
 
         protected virtual void OnPlayerAdded(PlayerComponent player)
