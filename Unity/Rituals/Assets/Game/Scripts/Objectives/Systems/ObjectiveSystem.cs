@@ -46,6 +46,11 @@ namespace Rituals.Objectives.Systems
                 this.objectives.Add(new Objective { GameObject = objective, State = ObjectiveState.Inactive });
 
                 Debug.Log("Objective added: {0}.", objective);
+
+                // Notify listeners.
+                this.EventManager.OnObjectiveAdded(
+                    this,
+                    new ObjectiveAddedEventArgs { Index = this.objectives.Count, Objective = objective });
             }
 
             this.currentObjective = this.objectives.FirstOrDefault();

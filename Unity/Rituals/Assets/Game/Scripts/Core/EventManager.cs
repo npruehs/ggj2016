@@ -34,6 +34,8 @@ namespace Rituals.Core
 
         public delegate void MovementInputDelegate(object sender, MovementInputEventArgs args);
 
+        public delegate void ObjectiveAddedDelegate(object sender, ObjectiveAddedEventArgs args);
+
         public delegate void ObjectiveStateChangedDelegate(object sender, ObjectiveStateChangedEventArgs args);
 
         public delegate void PressureChangedDelegate(object sender, PressureChangedEventArgs args);
@@ -61,6 +63,8 @@ namespace Rituals.Core
         public event PressureChangedDelegate PressureChanged;
 
         public event ObjectiveStateChangedDelegate ObjectiveStateChanged;
+
+        public event ObjectiveAddedDelegate ObjectiveAdded;
 
         #endregion
 
@@ -132,6 +136,15 @@ namespace Rituals.Core
         public void OnMovementInput(object sender, MovementInputEventArgs args)
         {
             var handler = this.MovementInput;
+            if (handler != null)
+            {
+                handler(sender, args);
+            }
+        }
+
+        public void OnObjectiveAdded(object sender, ObjectiveAddedEventArgs args)
+        {
+            var handler = this.ObjectiveAdded;
             if (handler != null)
             {
                 handler(sender, args);
