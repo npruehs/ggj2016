@@ -113,7 +113,7 @@ namespace Rituals.Interaction.Systems
                 this,
                 new SelectedInteractableChangedEventArgs
                 {
-                    Interactable = this.selectedInteractable != null ? this.selectedInteractable.gameObject : null
+                    Interactable = this.selectedInteractable
                 });
 
             // Check if auto.

@@ -14,6 +14,8 @@ namespace Rituals.Interaction.Components
 
         public bool Auto;
 
+        public string Interaction;
+
         #endregion
     }
 }

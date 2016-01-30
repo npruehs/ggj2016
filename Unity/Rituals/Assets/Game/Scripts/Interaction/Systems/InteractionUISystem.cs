@@ -38,7 +38,7 @@ namespace Rituals.Interaction.Systems
         private void OnSelectedInteractableChanged(object sender, SelectedInteractableChangedEventArgs args)
         {
             this.InteractionText.text = args.Interactable != null
-                ? string.Format("[E] Use {0}", args.Interactable.name)
+                ? string.Format("[E] {0}", args.Interactable.Interaction)
                 : string.Empty;
         }
 
