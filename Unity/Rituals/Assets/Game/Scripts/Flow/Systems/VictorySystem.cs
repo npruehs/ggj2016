@@ -11,6 +11,7 @@ namespace Rituals.Flow.Systems
     using Rituals.Interaction.Util;
     using Rituals.Objectives.Events;
     using Rituals.Physics.Events;
+    using Rituals.Progression.Storage;
 
     using UnityEngine;
 
@@ -80,7 +81,8 @@ namespace Rituals.Flow.Systems
             }
 
             // Victory!
-            Application.LoadLevel("MainMenu");
+            ProgressionStorage.SetLevelComplete(this.LevelSettings.LevelIndex);
+            Application.LoadLevel("LevelSelection");
         }
 
         private void OnObjectiveStateChanged(object sender, ObjectiveStateChangedEventArgs args)

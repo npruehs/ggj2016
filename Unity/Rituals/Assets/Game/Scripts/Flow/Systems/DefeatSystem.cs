@@ -34,7 +34,7 @@ namespace Rituals.Flow.Systems
             if (args.Pressure >= 1)
             {
                 // Defeat!
-                Application.LoadLevel("MainMenu");
+                Application.LoadLevel("LevelSelection");
             }
         }
 

@@ -7,6 +7,7 @@
 namespace Rituals.Menu.LevelSelection
 {
     using Rituals.Menu.MainMenu;
+    using Rituals.Progression.Storage;
 
     using UnityEngine;
     using UnityEngine.UI;
@@ -41,6 +42,12 @@ namespace Rituals.Menu.LevelSelection
                 if (text != null)
                 {
                     text.text = string.Format("Level {0}", level);
+                }
+
+                var image = levelButton.GetComponentInChildren<Image>();
+                if (image != null)
+                {
+                    image.enabled = ProgressionStorage.IsLevelComplete(level);
                 }
             }
         }
