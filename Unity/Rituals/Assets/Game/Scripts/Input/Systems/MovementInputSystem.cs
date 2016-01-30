@@ -17,22 +17,12 @@ namespace Rituals.Input.Systems
 
         private void Update()
         {
-            if (Input.GetKey(KeyCode.W))
-            {
-                this.EventManager.OnMovementInput(this, new MovementInputEventArgs { Direction = Vector3.forward });
-            }
-            if (Input.GetKey(KeyCode.S))
-            {
-                this.EventManager.OnMovementInput(this, new MovementInputEventArgs { Direction = Vector3.back });
-            }
-            if (Input.GetKey(KeyCode.A))
-            {
-                this.EventManager.OnMovementInput(this, new MovementInputEventArgs { Direction = Vector3.left });
-            }
-            if (Input.GetKey(KeyCode.D))
-            {
-                this.EventManager.OnMovementInput(this, new MovementInputEventArgs { Direction = Vector3.right });
-            }
+            this.EventManager.OnMovementInput(
+                this,
+                new MovementInputEventArgs
+                {
+                    Direction = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"))
+                });
         }
 
         #endregion

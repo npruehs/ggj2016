@@ -18,7 +18,7 @@ namespace Rituals.Input.Systems
 
         private void Update()
         {
-            if (Input.GetKeyUp(KeyCode.Escape))
+            if (Input.GetButton("Cancel"))
             {
                 this.EventManager.OnConcedeInput(this, EventArgs.Empty);
             }
