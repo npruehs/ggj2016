@@ -929,20 +929,6 @@ GameObject:
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: 291d7f098f387334e8fe84cb43ee0a60, type: 3}
   m_PrefabInternal: {fileID: 203512169}
---- !u!114 &132530381
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 132530379}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2de0fa9255681b14badb103a5c48e3f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Auto: 0
-  Enabled: 1
-  Interaction: 
 --- !u!1 &133821147
 GameObject:
   m_ObjectHideFlags: 0
@@ -2468,7 +2454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Auto: 0
   Enabled: 1
-  Interaction: Thrash6
+  Interaction: Remove Trash
 --- !u!1 &426846576
 GameObject:
   m_ObjectHideFlags: 0
@@ -3335,7 +3321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Auto: 0
   Enabled: 1
-  Interaction: Trash1
+  Interaction: Remove Trash
 --- !u!1 &593117270
 GameObject:
   m_ObjectHideFlags: 0
@@ -4074,7 +4060,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Auto: 0
   Enabled: 1
-  Interaction: Thrash4
+  Interaction: Remove Trash
 --- !u!1 &756457754
 GameObject:
   m_ObjectHideFlags: 0
@@ -6519,7 +6505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Auto: 0
   Enabled: 1
-  Interaction: Thrash3
+  Interaction: Remove Trash
 --- !u!1 &1156981325
 GameObject:
   m_ObjectHideFlags: 0
@@ -7129,7 +7115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Auto: 0
   Enabled: 1
-  Interaction: Trash2
+  Interaction: Remove Trash
 --- !u!4 &1254644012 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 801d21c8d131dfc4db2b7d55b95510a7, type: 3}
@@ -7647,7 +7633,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22480442, guid: e33e17865a667184580f70609d27957e, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11448334, guid: e33e17865a667184580f70609d27957e, type: 2}
       propertyPath: Objectives.Array.data[0]
@@ -10038,7 +10024,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Auto: 0
   Enabled: 1
-  Interaction: Thrash5
+  Interaction: Remove Trash
 --- !u!1 &1695679861
 GameObject:
   m_ObjectHideFlags: 0
@@ -12364,4 +12350,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Auto: 0
   Enabled: 1
-  Interaction: Thrash7
+  Interaction: Remove Trash
