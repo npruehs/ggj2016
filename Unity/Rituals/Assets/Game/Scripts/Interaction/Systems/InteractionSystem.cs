@@ -146,10 +146,45 @@ namespace Rituals.Interaction.Systems
             }
 
             // Play animation, if available.
-            var interactionAnimation = this.selectedInteractable.GetComponent<Animation>();
-            if (interactionAnimation != null)
+            var interactionAnimationComponent = this.selectedInteractable.GetComponent<InteractionAnimationComponent>();
+            if (interactionAnimationComponent != null && interactionAnimationComponent.Animiaton != null)
             {
-                interactionAnimation.Play();
+                // Play.
+                if (!string.IsNullOrEmpty(interactionAnimationComponent.AnimationName))
+                {
+                    interactionAnimationComponent.Animiaton.Play(interactionAnimationComponent.AnimationName);
+                }
+                else
+                {
+                    interactionAnimationComponent.Animiaton.Play();
+                }
+
+                // Set speed.
+                if (!string.IsNullOrEmpty(interactionAnimationComponent.AnimationName))
+                {
+                    if (interactionAnimationComponent.Invert)
+                    {
+                        interactionAnimationComponent.Animiaton[interactionAnimationComponent.AnimationName].time =
+                            interactionAnimationComponent.Animiaton[interactionAnimationComponent.AnimationName].length;
+                        interactionAnimationComponent.Animiaton[interactionAnimationComponent.AnimationName].speed = -1;
+                    }
+                    else
+                    {
+                        interactionAnimationComponent.Animiaton[interactionAnimationComponent.AnimationName].time = 0;
+                        interactionAnimationComponent.Animiaton[interactionAnimationComponent.AnimationName].speed = 1;
+                    }
+                }
+            }
+
+            // Hide if necessary
+            var interactionRendererComponent = this.selectedInteractable.GetComponent<InteractionRendererComponent>();
+            if (interactionRendererComponent != null && interactionRendererComponent.Renderer != null
+                && interactionRendererComponent.HideAfterInteraction)
+            {
+                foreach (var r in interactionRendererComponent.GetComponentsInChildren<Renderer>())
+                {
+                    r.enabled = false;
+                }
             }
 
             // Notify listeners.
