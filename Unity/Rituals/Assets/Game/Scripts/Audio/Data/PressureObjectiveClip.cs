@@ -22,5 +22,18 @@ namespace Rituals.Audio.Data
         public GameObject Objective;
 
         #endregion
+
+        #region Public Methods and Operators
+
+        public override string ToString()
+        {
+            return string.Format(
+                "Clip: {0}, MinimumPressure: {1}, Objective: {2}",
+                this.Clip,
+                this.MinimumPressure,
+                this.Objective != null ? this.Objective.name : "none");
+        }
+
+        #endregion
     }
 }

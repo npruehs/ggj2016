@@ -85,6 +85,8 @@ namespace Rituals.Audio.Systems
             var random = Random.Range(0, clips.Count);
             var randomClip = clips[random];
 
+            Debug.Log(string.Format("Selecting pressure clip - Current objective: {0}, Selected Clip: {1}", this.currentObjective, randomClip));
+
             // Play clip.
             this.AudioSource.PlayOneShot(randomClip.Clip);
 
