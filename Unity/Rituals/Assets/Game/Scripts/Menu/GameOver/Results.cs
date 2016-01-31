@@ -13,6 +13,8 @@ namespace Rituals.Menu.GameOver
     {
         #region Fields
 
+        public Image DefeatOverlay;
+
         public Text LevelText;
 
         public Text ObjectivesText;
@@ -22,6 +24,8 @@ namespace Rituals.Menu.GameOver
         public Text TotalPressureText;
 
         public Text TotalTimeText;
+
+        public Image VictoryOverlay;
 
         #endregion
 
@@ -37,6 +41,15 @@ namespace Rituals.Menu.GameOver
                 ResultsStorage.LastTotalObjectives);
             this.TotalPressureText.text = string.Format("{0:0.00}", ResultsStorage.LastTotalPressure);
             this.TotalTimeText.text = string.Format("{0:0.00}", ResultsStorage.LastTotalTime);
+
+            if (ResultsStorage.LastOutcome == "Victory")
+            {
+                this.DefeatOverlay.gameObject.SetActive(false);
+            }
+            else
+            {
+                this.VictoryOverlay.gameObject.SetActive(false);
+            }
         }
 
         #endregion

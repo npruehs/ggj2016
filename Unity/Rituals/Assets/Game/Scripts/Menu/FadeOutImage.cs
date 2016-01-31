@@ -28,6 +28,11 @@ namespace Rituals.Menu
                 this.Image.color.g,
                 this.Image.color.b,
                 this.Image.color.a - this.AlphaPerSecond * Time.deltaTime);
+
+            if (this.Image.color.a <= 0.0f)
+            {
+                Destroy(this.gameObject);
+            }
         }
 
         #endregion
