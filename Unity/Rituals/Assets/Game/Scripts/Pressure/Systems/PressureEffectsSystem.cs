@@ -9,6 +9,8 @@ namespace Rituals.Pressure.Systems
     using Rituals.Core;
     using Rituals.Pressure.Events;
 
+    using UnityEngine;
+
     public class PressureEffectsSystem : RitualsBehaviour
     {
         #region Methods
@@ -37,12 +39,14 @@ namespace Rituals.Pressure.Systems
             if (this.Player.VignetteAndChromaticAberration != null)
             {
                 this.Player.VignetteAndChromaticAberration.chromaticAberration =
-                    this.LevelSettings.ChromaticAbberationStrength * args.Pressure;
+                    this.LevelSettings.ChromaticAbberationStrength * args.Pressure
+                    * Mathf.Sin(Time.realtimeSinceStartup);
             }
 
             if (this.Player.Twirl != null)
             {
-                this.Player.Twirl.angle = this.LevelSettings.TwirlStrength * args.Pressure;
+                this.Player.Twirl.angle = this.LevelSettings.TwirlStrength * args.Pressure
+                                          * Mathf.Sin(Time.realtimeSinceStartup * 2.0f);
             }
         }
 
