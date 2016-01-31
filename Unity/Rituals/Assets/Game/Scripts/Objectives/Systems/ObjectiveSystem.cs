@@ -84,7 +84,7 @@ namespace Rituals.Objectives.Systems
 
             if (this.remainingObstacles > 0)
             {
-                this.EventManager.OnError(this, new ErrorEventArgs { ErrorMessage = "You can't do this right now. " });
+                this.EventManager.OnError(this, new ErrorEventArgs { ErrorMessage = "You need to remove all obstacles first!" });
                 Debug.Log(string.Format("Objective blocked by {0} obstacles.", this.remainingObstacles));
                 return;
             }
@@ -115,7 +115,7 @@ namespace Rituals.Objectives.Systems
             }
             else
             {
-                this.EventManager.OnError(this, new ErrorEventArgs { ErrorMessage = "You can't do this right now. " });
+                this.EventManager.OnError(this, new ErrorEventArgs { ErrorMessage = "You need to complete objectives in order!" });
             }
         }
 
