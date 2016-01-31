@@ -1,0 +1,378 @@
+newmtl crockery
+Kd 1 1 1
+Ke 0 0 0
+Ka 0.8 0.8 0.8
+Ks 0 0 0
+Ns 400
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+
+newmtl crockery_cup
+Kd 1 1 1
+Ke 0 0 0
+Ka 0.8 0.8 0.8
+Ks 0.6 0.6 0.6
+Ns 400
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+
+newmtl lambert1
+Kd 0.5 0.5 0.5
+Ke 0 0 0
+Ka 1 1 1
+Ks 0 0 0
+Ns 400
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+
+newmtl lambert1_1
+Kd 0.5 0.5 0.5
+Ke 0 0 0
+Ka 1 1 1
+Ks 0 0 0
+Ns 400
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+
+newmtl lambert1_2
+Kd 0.5 0.5 0.5
+Ke 0 0 0
+Ka 1 1 1
+Ks 0 0 0
+Ns 400
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+
+newmtl lambert1_4
+Kd 0.5 0.5 0.5
+Ke 0 0 0
+Ka 1 1 1
+Ks 0 0 0
+Ns 400
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+
+newmtl lambert1_5
+Kd 0.5 0.5 0.5
+Ke 0 0 0
+Ka 1 1 1
+Ks 0 0 0
+Ns 400
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+
+newmtl lambert1_6
+Kd 0.5 0.5 0.5
+Ke 0 0 0
+Ka 1 1 1
+Ks 0 0 0
+Ns 400
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+
+newmtl lambert1_7
+Kd 0.5 0.5 0.5
+Ke 0 0 0
+Ka 1 1 1
+Ks 0 0 0
+Ns 400
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+
+newmtl lambert2
+Kd 0.122 0.122 0.122
+Ke 0 0 0
+Ka 1 1 1
+Ks 0 0 0
+Ns 400
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+
+newmtl lambert2_1
+Kd 0.122 0.122 0.122
+Ke 0 0 0
+Ka 1 1 1
+Ks 0 0 0
+Ns 400
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+
+newmtl lambert2_2
+Kd 0.122 0.122 0.122
+Ke 0 0 0
+Ka 1 1 1
+Ks 0 0 0
+Ns 400
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+
+newmtl lambert3
+Kd 0.917 0.031178 0.031178
+Ke 0 0 0
+Ka 1 1 1
+Ks 0 0 0
+Ns 400
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+
+newmtl lambert3_3
+Kd 0.917 0.031178 0.031178
+Ke 0 0 0
+Ka 1 1 1
+Ks 0 0 0
+Ns 400
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+
+newmtl lambert4
+Kd 0.064052 0.354678 0.956
+Ke 0 0 0
+Ka 1 1 1
+Ks 0 0 0
+Ns 400
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+
+newmtl metal
+Kd 0.454902 0.454902 0.454902
+Ke 0 0 0
+Ka 0.3 0.3 0.3
+Ks 0.8 0.8 0.8
+Ns 200
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+
+newmtl napkins_01
+Kd 1 1 1
+Ke 0 0 0
+Ka 0.8 0.8 0.8
+Ks 0.6 0.6 0.6
+Ns 400
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+
+newmtl napkins_02
+Kd 1 0.254902 0.254902
+Ke 0 0 0
+Ka 0.8 0.8 0.8
+Ks 0.6 0.6 0.6
+Ns 400
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+
+newmtl pastic_white
+Kd 1 1 1
+Ke 0 0 0
+Ka 0.8 0.8 0.8
+Ks 0.6 0.6 0.6
+Ns 400
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+
+newmtl phong1_1
+Kd 0.122 0.122 0.122
+Ke 0 0 0
+Ka 1 1 1
+Ks 0 0 0
+Ns 400
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+
+newmtl phong1_2
+Kd 0.122 0.122 0.122
+Ke 0 0 0
+Ka 1 1 1
+Ks 0 0 0
+Ns 400
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+
+newmtl phong1_3
+Kd 0.122 0.122 0.122
+Ke 0 0 0
+Ka 1 1 1
+Ks 0 0 0
+Ns 400
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+
+newmtl red
+Kd 0.784314 0 0
+Ke 0 0 0
+Ka 0.7 0.7 0.7
+Ks 0 0 0
+Ns 400
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+
+newmtl tray
+Kd 0.631373 0.455166 0.198078
+Ke 0 0 0
+Ka 0.8 0.8 0.8
+Ks 0.6 0.6 0.6
+Ns 400
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+
+newmtl interieur_brandblusser_blauw
+Kd 0 0.623529 1
+Ke 0 0 0
+Ka 1 1 1
+Ks 0 0 0
+Ns 600
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+
+newmtl interieur_brandblusser_metaal_koper
+Kd 1 0.815686 0.0901961
+Ke 0 0 0
+Ka 0.8 0.8 0.8
+Ks 0.2 0.2 0.2
+Ns 600
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+
+newmtl interieur_brandblusser_metallic
+Kd 1 1 1
+Ke 0 0 0
+Ka 1 1 1
+Ks 0 0 0
+Ns 600
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+
+newmtl interieur_brandblusser_rood
+Kd 1 0 0
+Ke 0 0 0
+Ka 0.4 0.4 0.4
+Ks 0.2 0.2 0.2
+Ns 600
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+
+newmtl interieur_brandblusser_zwart
+Kd 0 0 0
+Ke 0 0 0
+Ka 0.8 0.8 0.8
+Ks 0.2 0.2 0.2
+Ns 600
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+
+newmtl interieur_brandblusser_zwart_mat_plastic
+Kd 0 0 0
+Ke 0 0 0
+Ka 1 1 1
+Ks 0 0 0
+Ns 600
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+
+newmtl leaves
+Kd 0.498039 0.498039 0.498039
+Ke 0 0 0
+Ka 1 1 1
+Ks 0.0980392 0.0980392 0.0980392
+Ns 1000
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+map_Kd C:Users/Luke/Google Drive/GameJam2016/Assets/Images/plant_palm_leaf.jpg
+map_bump C:Users/Luke/Google Drive/GameJam2016/Assets/Images/plant_palm_bump.jpg
+bump C:Users/Luke/Google Drive/GameJam2016/Assets/Images/plant_palm_bump.jpg
+
+newmtl pot
+Kd 0.866667 0.866667 0.866667
+Ke 0 0 0
+Ka 1 1 1
+Ks 0.8 0.8 0.8
+Ns 400
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+map_Kd C:Users/Luke/Google Drive/GameJam2016/Assets/Images/plant_palm_wood.jpg
+
+newmtl soil
+Kd 0.235294 0.192127 0.159631
+Ke 0 0 0
+Ka 0.4 0.4 0.4
+Ks 0 0 0
+Ns 400
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+
+newmtl stem
+Kd 0.286275 0.217527 0.145944
+Ke 0 0 0
+Ka 0.55 0.55 0.55
+Ks 0.05 0.05 0.05
+Ns 200
+Tr 0
+d 1
+Ni 1
+Tf 1 1 1
+
