@@ -6744,22 +6744,22 @@ MonoBehaviour:
   SpeechClips:
   - Clip: {fileID: 8300000, guid: 6d51623883b00e243b854669854984a6, type: 3}
     MinimumPressure: 0
-    Objective: {fileID: 0}
+    Objective: {fileID: 282843779}
   - Clip: {fileID: 8300000, guid: dcde733a0a4a5234989b942faf26ae95, type: 3}
     MinimumPressure: 0
-    Objective: {fileID: 0}
+    Objective: {fileID: 282843779}
   - Clip: {fileID: 8300000, guid: 8db25325556c3d843aa84daf3fd85911, type: 3}
     MinimumPressure: 0
-    Objective: {fileID: 0}
+    Objective: {fileID: 282843779}
   - Clip: {fileID: 8300000, guid: a9e3c5e3f3768b646ac1c5f0b8e553a6, type: 3}
     MinimumPressure: 0
-    Objective: {fileID: 0}
+    Objective: {fileID: 282843779}
   - Clip: {fileID: 8300000, guid: 2573c9c5a90048d4db99e34145c1c440, type: 3}
     MinimumPressure: 0
-    Objective: {fileID: 0}
+    Objective: {fileID: 282843779}
   - Clip: {fileID: 8300000, guid: bb9d4b2e657042d4da3ec69297de3126, type: 3}
     MinimumPressure: 0
-    Objective: {fileID: 0}
+    Objective: {fileID: 282843779}
   - Clip: {fileID: 8300000, guid: c04fc502bf5eae846a5c27140ddc8bc4, type: 3}
     MinimumPressure: 0
     Objective: {fileID: 217117975}
@@ -6834,22 +6834,22 @@ MonoBehaviour:
     Objective: {fileID: 0}
   - Clip: {fileID: 8300000, guid: bd0f96ca34d43314a91e844223c46a11, type: 3}
     MinimumPressure: 0
-    Objective: {fileID: 0}
+    Objective: {fileID: 1380946268}
   - Clip: {fileID: 8300000, guid: 67c03a39f1b72474f8a2754993c3b722, type: 3}
     MinimumPressure: 0
-    Objective: {fileID: 0}
+    Objective: {fileID: 1380946268}
   - Clip: {fileID: 8300000, guid: 3da9fab882e04644a983181889d50631, type: 3}
     MinimumPressure: 0
-    Objective: {fileID: 0}
+    Objective: {fileID: 1380946268}
   - Clip: {fileID: 8300000, guid: 45dcf737069d31e47a64f475771f13f0, type: 3}
     MinimumPressure: 0
-    Objective: {fileID: 0}
+    Objective: {fileID: 1380946268}
   - Clip: {fileID: 8300000, guid: a365d7e3a410e01468a47e5ad78adc7c, type: 3}
     MinimumPressure: 0
-    Objective: {fileID: 0}
+    Objective: {fileID: 1380946268}
   - Clip: {fileID: 8300000, guid: a9c78355b4663a747bdbafd6bb31b4bb, type: 3}
     MinimumPressure: 0
-    Objective: {fileID: 0}
+    Objective: {fileID: 1380946268}
   - Clip: {fileID: 8300000, guid: 94eebe5c957a7fc4b9d334d2fd08a793, type: 3}
     MinimumPressure: 0
     Objective: {fileID: 1386052954}
