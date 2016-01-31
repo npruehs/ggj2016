@@ -128,7 +128,8 @@ namespace Rituals.Interaction.Systems
         {
             // Prefer current objective.
             var interactable =
-                this.interactablesInRange.FirstOrDefault(i => i.Enabled && i.gameObject == this.currentObjective);
+                this.interactablesInRange.FirstOrDefault(
+                    i => i != null && i.Enabled && i.gameObject == this.currentObjective);
 
             if (interactable == null)
             {

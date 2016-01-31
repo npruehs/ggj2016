@@ -82,6 +82,11 @@ namespace Rituals.Objectives.Systems
                 return;
             }
 
+            if (args.Consumed)
+            {
+                return;
+            }
+
             if (this.remainingObstacles > 0)
             {
                 this.EventManager.OnError(this, new ErrorEventArgs { ErrorMessage = "You need to remove all obstacles first!" });

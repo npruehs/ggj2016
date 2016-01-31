@@ -105,6 +105,8 @@ namespace Rituals.Obstacles.Systems
             // Remove obstacle.
             obstacle.Removed = true;
 
+            Object.Destroy(obstacle.Data.Obstacle);
+
             Debug.Log(string.Format("Obstacle removed: {0}", obstacle.Data.Obstacle.name));
 
             // Notify listeners.

@@ -887,7 +887,7 @@ Transform:
   - {fileID: 463224}
   - {fileID: 409918}
   m_Father: {fileID: 434792}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!4 &420100
 Transform:
   m_ObjectHideFlags: 1
@@ -976,8 +976,8 @@ Transform:
   - {fileID: 411372}
   - {fileID: 400966}
   - {fileID: 475270}
-  - {fileID: 418122}
   - {fileID: 435236}
+  - {fileID: 418122}
   - {fileID: 440892}
   - {fileID: 416292}
   - {fileID: 427112}
@@ -1010,7 +1010,7 @@ Transform:
   m_Children:
   - {fileID: 402394}
   m_Father: {fileID: 434792}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!4 &437942
 Transform:
   m_ObjectHideFlags: 1

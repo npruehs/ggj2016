@@ -14,6 +14,8 @@ namespace Rituals.Interaction.Events
 
         public GameObject GameObject;
 
+        public bool Consumed;
+
         #endregion
     }
 }
