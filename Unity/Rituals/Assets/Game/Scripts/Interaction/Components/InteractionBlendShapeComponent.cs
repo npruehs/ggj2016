@@ -41,7 +41,7 @@ namespace Rituals.Interaction.Components
             }
 
             var currentWeight = this.SkinnedMeshRenderer.GetBlendShapeWeight(this.BlendShape);
-            var newWeight = this.Speed * Time.deltaTime;
+            var newWeight = currentWeight + this.Speed * Time.deltaTime;
             this.SkinnedMeshRenderer.SetBlendShapeWeight(this.BlendShape, newWeight);
         }
 
