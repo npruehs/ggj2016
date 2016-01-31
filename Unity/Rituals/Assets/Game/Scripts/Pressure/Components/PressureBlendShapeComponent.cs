@@ -1,18 +1,22 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="PressureChangedEventArgs.cs" company="Slash Games">
+// <copyright file="PressureBlendShapeComponent.cs" company="Slash Games">
 //   Copyright (c) Slash Games. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Rituals.Pressure.Events
+namespace Rituals.Pressure.Components
 {
-    public class PressureChangedEventArgs
+    using UnityEngine;
+
+    public class PressureBlendShapeComponent : MonoBehaviour
     {
         #region Fields
 
-        public float Delta;
+        public int BlendShape;
 
-        public float Pressure;
+        public SkinnedMeshRenderer SkinnedMeshRenderer;
+
+        public float MaximumWeight = 100.0f;
 
         #endregion
     }

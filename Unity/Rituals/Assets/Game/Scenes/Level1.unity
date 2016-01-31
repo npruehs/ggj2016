@@ -6231,23 +6231,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 13700000, guid: 7dcb4b0dfe1469045b87d04dfc4b1244, type: 3}
       propertyPath: m_AABB.m_Center.y
-      value: 0.03757653
+      value: .0375765301
       objectReference: {fileID: 0}
     - target: {fileID: 13700000, guid: 7dcb4b0dfe1469045b87d04dfc4b1244, type: 3}
       propertyPath: m_AABB.m_Center.z
-      value: 0.06657374
+      value: .0665737391
       objectReference: {fileID: 0}
     - target: {fileID: 13700000, guid: 7dcb4b0dfe1469045b87d04dfc4b1244, type: 3}
       propertyPath: m_AABB.m_Extent.x
-      value: 0.21447553
+      value: .214475527
       objectReference: {fileID: 0}
     - target: {fileID: 13700000, guid: 7dcb4b0dfe1469045b87d04dfc4b1244, type: 3}
       propertyPath: m_AABB.m_Extent.y
-      value: 0.037598263
+      value: .0375982635
       objectReference: {fileID: 0}
     - target: {fileID: 13700000, guid: 7dcb4b0dfe1469045b87d04dfc4b1244, type: 3}
       propertyPath: m_AABB.m_Extent.z
-      value: 0.28104925
+      value: .281049252
       objectReference: {fileID: 0}
     - target: {fileID: 13700000, guid: 7dcb4b0dfe1469045b87d04dfc4b1244, type: 3}
       propertyPath: m_DirtyAABB
@@ -6259,7 +6259,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 13700000, guid: 7dcb4b0dfe1469045b87d04dfc4b1244, type: 3}
       propertyPath: m_BlendShapeWeights.Array.data[0]
-      value: -21
+      value: -41.5999985
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: 7dcb4b0dfe1469045b87d04dfc4b1244, type: 3}
       propertyPath: m_LocalRotation.y
@@ -6750,7 +6750,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22480442, guid: e33e17865a667184580f70609d27957e, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11448334, guid: e33e17865a667184580f70609d27957e, type: 2}
       propertyPath: Objectives.Array.data[0]
@@ -9812,6 +9812,24 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1901417017}
   m_Mesh: {fileID: 4300308, guid: eb7f3d37903a79f44b4448595dbec090, type: 3}
+--- !u!1 &1925199880 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100002, guid: 7dcb4b0dfe1469045b87d04dfc4b1244, type: 3}
+  m_PrefabInternal: {fileID: 1230069998}
+--- !u!114 &1925199881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1925199880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0edea04c507dd84da16ed7203707f80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BlendShape: 0
+  SkinnedMeshRenderer: {fileID: 2044612931}
+  MaximumWeight: 100
 --- !u!1 &1949091008
 GameObject:
   m_ObjectHideFlags: 0
@@ -10228,6 +10246,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2020917592}
   m_Mesh: {fileID: 4300002, guid: df012dd0e355b1f4a8b0778f723ee77b, type: 3}
+--- !u!137 &2044612931 stripped
+SkinnedMeshRenderer:
+  m_PrefabParentObject: {fileID: 13700000, guid: 7dcb4b0dfe1469045b87d04dfc4b1244,
+    type: 3}
+  m_PrefabInternal: {fileID: 1230069998}
 --- !u!1001 &2048106637
 Prefab:
   m_ObjectHideFlags: 0

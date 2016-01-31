@@ -1,20 +1,25 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="DefeatSystem.cs" company="Slash Games">
+// <copyright file="PressureBlendShapeSystem.cs" company="Slash Games">
 //   Copyright (c) Slash Games. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Rituals.Flow.Systems
+namespace Rituals.Pressure.Systems
 {
-    using System;
-
     using Rituals.Core;
+    using Rituals.Pressure.Components;
     using Rituals.Pressure.Events;
 
-    using UnityEngine;
-
-    public class DefeatSystem : RitualsBehaviour
+    public class PressureBlendShapeSystem : RitualsBehaviour
     {
+        #region Fields
+
+        private PressureBlendShapeComponent[] blendShapes;
+
+        private float currentPressure;
+
+        #endregion
+
         #region Methods
 
         protected override void AddListeners()
@@ -22,6 +27,13 @@ namespace Rituals.Flow.Systems
             base.AddListeners();
 
             this.EventManager.PressureChanged += this.OnPressureChanged;
+        }
+
+        protected override void Init()
+        {
+            base.Init();
+
+            this.blendShapes = FindObjectsOfType<PressureBlendShapeComponent>();
         }
 
         protected override void RemoveListeners()
@@ -33,10 +45,16 @@ namespace Rituals.Flow.Systems
 
         private void OnPressureChanged(object sender, PressureChangedEventArgs args)
         {
-            if (args.Pressure >= 1)
+            this.currentPressure = args.Pressure;
+        }
+
+        private void Update()
+        {
+            foreach (var blendShape in this.blendShapes)
             {
-                // Defeat!
-                this.EventManager.OnDefeat(this, EventArgs.Empty);
+                blendShape.SkinnedMeshRenderer.SetBlendShapeWeight(
+                    blendShape.BlendShape,
+                    this.currentPressure * blendShape.MaximumWeight);
             }
         }
 

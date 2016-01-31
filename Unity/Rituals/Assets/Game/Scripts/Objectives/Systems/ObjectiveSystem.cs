@@ -93,6 +93,9 @@ namespace Rituals.Objectives.Systems
                 // Finish objective.
                 this.SetObjectiveState(this.currentObjective, ObjectiveState.Complete);
 
+                // Play effects.
+                this.PlayInteractionEffects(this.currentObjective.GameObject);
+
                 // Prevent further interaction.
                 var interactableComponent = this.currentObjective.GameObject.GetComponent<InteractableComponent>();
                 interactableComponent.Enabled = false;
@@ -118,6 +121,58 @@ namespace Rituals.Objectives.Systems
         private void OnObstaclesChanged(object sender, ObstaclesChangedEventArgs args)
         {
             this.remainingObstacles = args.Obstacles;
+        }
+
+        private void PlayInteractionEffects(GameObject o)
+        {
+            // Play animation, if available.
+            var interactionAnimationComponent = o.GetComponent<InteractionAnimationComponent>();
+            if (interactionAnimationComponent != null && interactionAnimationComponent.Animiaton != null)
+            {
+                // Play.
+                if (!string.IsNullOrEmpty(interactionAnimationComponent.AnimationName))
+                {
+                    interactionAnimationComponent.Animiaton.Play(interactionAnimationComponent.AnimationName);
+                }
+                else
+                {
+                    interactionAnimationComponent.Animiaton.Play();
+                }
+
+                // Set speed.
+                if (!string.IsNullOrEmpty(interactionAnimationComponent.AnimationName))
+                {
+                    if (interactionAnimationComponent.Invert)
+                    {
+                        interactionAnimationComponent.Animiaton[interactionAnimationComponent.AnimationName].time =
+                            interactionAnimationComponent.Animiaton[interactionAnimationComponent.AnimationName].length;
+                        interactionAnimationComponent.Animiaton[interactionAnimationComponent.AnimationName].speed = -1;
+                    }
+                    else
+                    {
+                        interactionAnimationComponent.Animiaton[interactionAnimationComponent.AnimationName].time = 0;
+                        interactionAnimationComponent.Animiaton[interactionAnimationComponent.AnimationName].speed = 1;
+                    }
+                }
+            }
+
+            // Blend shapes, if available.
+            var interactionBlendShapeComponent = o.GetComponent<InteractionBlendShapeComponent>();
+            if (interactionBlendShapeComponent != null)
+            {
+                interactionBlendShapeComponent.Play();
+            }
+
+            // Hide if necessary
+            var interactionRendererComponent = o.GetComponent<InteractionRendererComponent>();
+            if (interactionRendererComponent != null && interactionRendererComponent.Renderer != null
+                && interactionRendererComponent.HideAfterInteraction)
+            {
+                foreach (var r in interactionRendererComponent.GetComponentsInChildren<Renderer>())
+                {
+                    r.enabled = false;
+                }
+            }
         }
 
         private void SetCurrentObjective(Objective objective)

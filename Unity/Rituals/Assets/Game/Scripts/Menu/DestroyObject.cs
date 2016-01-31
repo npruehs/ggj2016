@@ -1,18 +1,21 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="PressureChangedEventArgs.cs" company="Slash Games">
+// <copyright file="DestroyObject.cs" company="Slash Games">
 //   Copyright (c) Slash Games. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 
-namespace Rituals.Pressure.Events
+namespace Rituals.Menu
 {
-    public class PressureChangedEventArgs
+    using UnityEngine;
+
+    public class DestroyObject : MonoBehaviour
     {
-        #region Fields
+        #region Public Methods and Operators
 
-        public float Delta;
-
-        public float Pressure;
+        public void DestroyThis()
+        {
+            Destroy(this.gameObject);
+        }
 
         #endregion
     }

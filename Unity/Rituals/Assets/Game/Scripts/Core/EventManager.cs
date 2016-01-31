@@ -30,6 +30,8 @@ namespace Rituals.Core
 
         public delegate void CurrentObjectiveChangedDelegate(object sender, CurrentObjectiveChangedEventArgs args);
 
+        public delegate void DefeatDelegate(object sender, EventArgs args);
+
         public delegate void ErrorDelegate(object sender, ErrorEventArgs args);
 
         public delegate void InteractableEnteredRangeDelegate(object sender, InteractableEnteredRangeEventArgs args);
@@ -56,9 +58,15 @@ namespace Rituals.Core
             object sender,
             SelectedInteractableChangedEventArgs args);
 
+        public delegate void VictoryDelegate(object sender, EventArgs args);
+
         #endregion
 
         #region Events
+
+        public event DefeatDelegate Defeat;
+
+        public event VictoryDelegate Victory;
 
         public event ErrorDelegate Error;
 
@@ -126,6 +134,15 @@ namespace Rituals.Core
         public void OnCurrentObjectiveChanged(object sender, CurrentObjectiveChangedEventArgs args)
         {
             var handler = this.CurrentObjectiveChanged;
+            if (handler != null)
+            {
+                handler(sender, args);
+            }
+        }
+
+        public void OnDefeat(object sender, EventArgs args)
+        {
+            var handler = this.Defeat;
             if (handler != null)
             {
                 handler(sender, args);
@@ -234,6 +251,15 @@ namespace Rituals.Core
         public void OnSelectedInteractableChanged(object sender, SelectedInteractableChangedEventArgs args)
         {
             var handler = this.SelectedInteractableChanged;
+            if (handler != null)
+            {
+                handler(sender, args);
+            }
+        }
+
+        public void OnVictory(object sender, EventArgs args)
+        {
+            var handler = this.Victory;
             if (handler != null)
             {
                 handler(sender, args);
