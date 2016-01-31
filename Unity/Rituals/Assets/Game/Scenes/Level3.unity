@@ -4618,7 +4618,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 22480442, guid: e33e17865a667184580f70609d27957e, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 434792, guid: e33e17865a667184580f70609d27957e, type: 2}
       propertyPath: m_LocalPosition.x

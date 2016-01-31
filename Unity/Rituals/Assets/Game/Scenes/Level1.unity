@@ -6689,7 +6689,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22480442, guid: e33e17865a667184580f70609d27957e, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11448334, guid: e33e17865a667184580f70609d27957e, type: 2}
       propertyPath: Objectives.Array.data[0]
@@ -9335,7 +9335,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: .25
+  m_Radius: 1.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1852271551
 GameObject:
