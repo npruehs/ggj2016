@@ -8270,7 +8270,7 @@ MonoBehaviour:
   - {fileID: 1815394390}
   Obstacles: []
   PlayerSpeed: 1.5
-  PressureAppliedPerSecond: .00999999978
+  PressureAppliedPerSecond: .0250000004
   PressureReducedPerObjective: .330000013
   SpeechClips: []
   SpeechDelay: 5

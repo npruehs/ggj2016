@@ -7711,7 +7711,7 @@ MonoBehaviour:
   - BlockedObjective: {fileID: 1380946268}
     Obstacle: {fileID: 2133135702}
   PlayerSpeed: 1.25
-  PressureAppliedPerSecond: .0500000007
+  PressureAppliedPerSecond: .00999999978
   PressureReducedPerObjective: .330000013
   SpeechClips:
   - Clip: {fileID: 8300000, guid: 6d51623883b00e243b854669854984a6, type: 3}
