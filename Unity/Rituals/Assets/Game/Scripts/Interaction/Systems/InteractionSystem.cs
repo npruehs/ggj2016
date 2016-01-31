@@ -176,6 +176,14 @@ namespace Rituals.Interaction.Systems
                 }
             }
 
+            // Blend shapes, if available.
+            var interactionBlendShapeComponent =
+                this.selectedInteractable.GetComponent<InteractionBlendShapeComponent>();
+            if (interactionBlendShapeComponent != null)
+            {
+                interactionBlendShapeComponent.Play();
+            }
+
             // Hide if necessary
             var interactionRendererComponent = this.selectedInteractable.GetComponent<InteractionRendererComponent>();
             if (interactionRendererComponent != null && interactionRendererComponent.Renderer != null
