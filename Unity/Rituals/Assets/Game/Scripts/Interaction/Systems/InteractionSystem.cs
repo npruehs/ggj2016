@@ -26,6 +26,8 @@ namespace Rituals.Interaction.Systems
 
         private InteractableComponent selectedInteractable;
 
+        private GameObject currentObjective;
+
         #endregion
 
         #region Methods
@@ -112,6 +114,8 @@ namespace Rituals.Interaction.Systems
 
         private void OnCurrentObjectiveChanged(object sender, CurrentObjectiveChangedEventArgs args)
         {
+            this.currentObjective = args.NewObjective;
+
             this.SelectInteractable();
         }
 
@@ -122,7 +126,15 @@ namespace Rituals.Interaction.Systems
 
         private void SelectInteractable()
         {
-            var interactable = this.interactablesInRange.FirstOrDefault(i => i.Enabled);
+            // Prefer current objective.
+            var interactable =
+                this.interactablesInRange.FirstOrDefault(i => i.Enabled && i.gameObject == this.currentObjective);
+
+            if (interactable == null)
+            {
+                interactable =
+                    this.interactablesInRange.FirstOrDefault(i => i.Enabled);
+            }
 
             this.selectedInteractable = interactable;
 
