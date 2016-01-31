@@ -16,6 +16,8 @@ namespace Rituals.Interaction.Systems
     using Rituals.Objectives.Events;
     using Rituals.Physics.Events;
 
+    using UnityEngine;
+
     public class InteractionSystem : RitualsBehaviour
     {
         #region Fields
@@ -143,6 +145,14 @@ namespace Rituals.Interaction.Systems
                 return;
             }
 
+            // Play animation, if available.
+            var interactionAnimation = this.selectedInteractable.GetComponent<Animation>();
+            if (interactionAnimation != null)
+            {
+                interactionAnimation.Play();
+            }
+
+            // Notify listeners.
             this.EventManager.OnInteractableUsed(
                 this,
                 new InteractableUsedEventArgs { GameObject = this.selectedInteractable.gameObject });
