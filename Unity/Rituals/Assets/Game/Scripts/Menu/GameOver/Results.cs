@@ -13,7 +13,15 @@ namespace Rituals.Menu.GameOver
     {
         #region Fields
 
+        public Text LevelText;
+
+        public Text ObjectivesText;
+
         public Text OutcomeText;
+
+        public Text TotalPressureText;
+
+        public Text TotalTimeText;
 
         #endregion
 
@@ -21,7 +29,14 @@ namespace Rituals.Menu.GameOver
 
         private void Start()
         {
-            this.OutcomeText.text = ResultsStorage.LastOutcome;
+            this.OutcomeText.text = ResultsStorage.LastOutcome.ToUpper();
+            this.LevelText.text = string.Format("Level {0}", ResultsStorage.LastLevel);
+            this.ObjectivesText.text = string.Format(
+                "{0} / {1}",
+                ResultsStorage.LastCompletedObjectives,
+                ResultsStorage.LastTotalObjectives);
+            this.TotalPressureText.text = string.Format("{0:0.00}", ResultsStorage.LastTotalPressure);
+            this.TotalTimeText.text = string.Format("{0:0.00}", ResultsStorage.LastTotalTime);
         }
 
         #endregion

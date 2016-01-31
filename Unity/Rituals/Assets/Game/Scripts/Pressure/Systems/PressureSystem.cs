@@ -49,11 +49,16 @@ namespace Rituals.Pressure.Systems
 
         private void SetPressure(float newPressure)
         {
+            var oldPressure = this.pressure;
+
             // Clamp.
             this.pressure = Mathf.Clamp01(newPressure);
+            var delta = this.pressure - oldPressure;
 
             // Notify listeners.
-            this.EventManager.OnPressureChanged(this, new PressureChangedEventArgs { Pressure = this.pressure });
+            this.EventManager.OnPressureChanged(
+                this,
+                new PressureChangedEventArgs { Delta = delta, Pressure = this.pressure });
         }
 
         private void Update()

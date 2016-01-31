@@ -10,6 +10,8 @@ namespace Rituals.Pressure.Events
     {
         #region Fields
 
+        public float Delta;
+
         public float Pressure;
 
         #endregion
