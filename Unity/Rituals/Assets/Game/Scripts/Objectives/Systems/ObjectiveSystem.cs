@@ -10,6 +10,7 @@ namespace Rituals.Objectives.Systems
     using System.Linq;
 
     using Rituals.Core;
+    using Rituals.Error.Events;
     using Rituals.Interaction.Components;
     using Rituals.Interaction.Events;
     using Rituals.Interaction.Util;
@@ -82,6 +83,7 @@ namespace Rituals.Objectives.Systems
 
             if (this.remainingObstacles > 0)
             {
+                this.EventManager.OnError(this, new ErrorEventArgs { ErrorMessage = "You can't do this right now. " });
                 Debug.Log(string.Format("Objective blocked by {0} obstacles.", this.remainingObstacles));
                 return;
             }
@@ -106,6 +108,10 @@ namespace Rituals.Objectives.Systems
                 {
                     this.SetCurrentObjective(null);
                 }
+            }
+            else
+            {
+                this.EventManager.OnError(this, new ErrorEventArgs { ErrorMessage = "You can't do this right now. " });
             }
         }
 

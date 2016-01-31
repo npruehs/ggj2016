@@ -8,6 +8,7 @@ namespace Rituals.Core
 {
     using System;
 
+    using Rituals.Error.Events;
     using Rituals.Input.Events;
     using Rituals.Interaction.Events;
     using Rituals.Objectives.Events;
@@ -28,6 +29,8 @@ namespace Rituals.Core
         public delegate void ConcedeInputDelegate(object sender, EventArgs args);
 
         public delegate void CurrentObjectiveChangedDelegate(object sender, CurrentObjectiveChangedEventArgs args);
+
+        public delegate void ErrorDelegate(object sender, ErrorEventArgs args);
 
         public delegate void InteractableEnteredRangeDelegate(object sender, InteractableEnteredRangeEventArgs args);
 
@@ -56,6 +59,8 @@ namespace Rituals.Core
         #endregion
 
         #region Events
+
+        public event ErrorDelegate Error;
 
         public event ObstaclesChangedDelegate ObstaclesChanged;
 
@@ -121,6 +126,15 @@ namespace Rituals.Core
         public void OnCurrentObjectiveChanged(object sender, CurrentObjectiveChangedEventArgs args)
         {
             var handler = this.CurrentObjectiveChanged;
+            if (handler != null)
+            {
+                handler(sender, args);
+            }
+        }
+
+        public void OnError(object sender, ErrorEventArgs args)
+        {
+            var handler = this.Error;
             if (handler != null)
             {
                 handler(sender, args);
