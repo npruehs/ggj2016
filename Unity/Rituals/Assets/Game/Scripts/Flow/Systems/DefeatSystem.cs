@@ -6,6 +6,8 @@
 
 namespace Rituals.Flow.Systems
 {
+    using System;
+
     using Rituals.Core;
     using Rituals.Pressure.Events;
 
@@ -34,7 +36,7 @@ namespace Rituals.Flow.Systems
             if (args.Pressure >= 1)
             {
                 // Defeat!
-                Application.LoadLevel("LevelSelection");
+                this.EventManager.OnDefeat(this, EventArgs.Empty);
             }
         }
 

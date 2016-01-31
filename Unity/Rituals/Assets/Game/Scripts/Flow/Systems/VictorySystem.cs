@@ -6,6 +6,8 @@
 
 namespace Rituals.Flow.Systems
 {
+    using System;
+
     using Rituals.Core;
     using Rituals.Flow.Components;
     using Rituals.Interaction.Util;
@@ -81,7 +83,7 @@ namespace Rituals.Flow.Systems
             }
 
             // Victory!
-            this.Victory();
+            this.EventManager.OnVictory(this, EventArgs.Empty);
         }
 
         private void OnObjectiveStateChanged(object sender, ObjectiveStateChangedEventArgs args)
@@ -91,14 +93,8 @@ namespace Rituals.Flow.Systems
             if (this.mayLeave)
             {
                 // Victory!
-                this.Victory();
+                this.EventManager.OnVictory(this, EventArgs.Empty);
             }
-        }
-
-        private void Victory()
-        {
-            ProgressionStorage.SetLevelComplete(this.LevelSettings.LevelIndex);
-            Application.LoadLevel("LevelSelection");
         }
 
         #endregion

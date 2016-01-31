@@ -372,6 +372,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &147088
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 432334}
+  - 114: {fileID: 11450714}
+  m_Layer: 0
+  m_Name: Game Over
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &153002
 GameObject:
   m_ObjectHideFlags: 1
@@ -934,6 +950,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 440892}
   m_RootOrder: 2
+--- !u!4 &432334
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 147088}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 440892}
+  m_RootOrder: 3
 --- !u!4 &434792
 Transform:
   m_ObjectHideFlags: 1
@@ -1020,6 +1048,7 @@ Transform:
   - {fileID: 475976}
   - {fileID: 425548}
   - {fileID: 427152}
+  - {fileID: 432334}
   m_Father: {fileID: 434792}
   m_RootOrder: 6
 --- !u!4 &454540
@@ -1608,6 +1637,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f4581ff917940144a0c43b7850e9b0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11450714
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 147088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e14e79cad4e6bda4c9195ed37c535766, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &11452270

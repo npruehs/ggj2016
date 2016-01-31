@@ -19,3 +19,5 @@ EditorBuildSettings:
     path: Assets/Game/Scenes/testLevel.unity
   - enabled: 1
     path: Assets/Game/Scenes/Level2.unity
+  - enabled: 1
+    path: Assets/Game/Scenes/GameOver.unity
