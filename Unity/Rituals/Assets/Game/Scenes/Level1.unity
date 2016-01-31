@@ -6689,7 +6689,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22480442, guid: e33e17865a667184580f70609d27957e, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11448334, guid: e33e17865a667184580f70609d27957e, type: 2}
       propertyPath: Objectives.Array.data[0]
@@ -6739,7 +6739,7 @@ MonoBehaviour:
   - {fileID: 217117975}
   Obstacles: []
   PlayerSpeed: 1.25
-  PressureAppliedPerSecond: .0500000007
+  PressureAppliedPerSecond: .0299999993
   PressureReducedPerObjective: .330000013
   SpeechClips:
   - Clip: {fileID: 8300000, guid: 6d51623883b00e243b854669854984a6, type: 3}
