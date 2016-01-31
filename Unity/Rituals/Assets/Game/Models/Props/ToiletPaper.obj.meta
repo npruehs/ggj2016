@@ -1,32 +1,22 @@
 fileFormatVersion: 2
-guid: 6b71db538b8b73b4cbce30385b6e5a79
-timeCreated: 1454239899
+guid: d99dfdefddfc68345b30d934a28fcfb8
+timeCreated: 1454244460
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: bin
+    100000: Default
     100002: //RootNode
-    100004: bin_1
-    100006: bin1:bin_1_group
-    100008: initialShadingGroup_bin1:bin_1_group
-    400000: bin
+    100004: initialShadingGroup_Default
+    400000: Default
     400002: //RootNode
-    400004: bin_1
-    400006: bin1:bin_1_group
-    400008: initialShadingGroup_bin1:bin_1_group
-    2300000: bin
-    2300002: bin_1
-    2300004: bin1:bin_1_group
-    2300006: initialShadingGroup_bin1:bin_1_group
-    3300000: bin
-    3300002: bin_1
-    3300004: bin1:bin_1_group
-    3300006: initialShadingGroup_bin1:bin_1_group
-    4300000: bin
-    4300002: bin_1
-    4300004: bin1:bin_1_group
-    4300006: initialShadingGroup_bin1:bin_1_group
+    400004: initialShadingGroup_Default
+    2300000: Default
+    2300002: initialShadingGroup_Default
+    3300000: Default
+    3300002: initialShadingGroup_Default
+    4300000: Default
+    4300002: initialShadingGroup_Default
   materials:
     importMaterials: 1
     materialName: 0

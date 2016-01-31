@@ -1,130 +1,88 @@
-newmtl 1
-Kd 0.784314 0.784314 0.784314
-Ke 0 0 0
-Ka 1 1 1
-Ks 0 0 0
-Ns 400
-Tr 0
-d 1
-Ni 1
-Tf 1 1 1
-map_Kd books/1.jpg
-map_Ks books/books_refl_mask.png
-
-newmtl 10
-Kd 0.784314 0.784314 0.784314
-Ke 0 0 0
-Ka 1 1 1
-Ks 0 0 0
-Ns 400
-Tr 0
-d 1
-Ni 1
-Tf 1 1 1
-map_Kd books/10.jpg
-map_Ks books/books_refl_mask.png
-
-newmtl 2
-Kd 0.784314 0.784314 0.784314
-Ke 0 0 0
-Ka 1 1 1
-Ks 0 0 0
-Ns 400
-Tr 0
-d 1
-Ni 1
-Tf 1 1 1
-map_Kd books/2.jpg
-map_Ks books/books_refl_mask.png
-
-newmtl 3
-Kd 0.784314 0.784314 0.784314
-Ke 0 0 0
-Ka 1 1 1
-Ks 0 0 0
-Ns 400
-Tr 0
-d 1
-Ni 1
-Tf 1 1 1
-map_Kd books/3.jpg
-map_Ks books/books_refl_mask.png
-
-newmtl 4
-Kd 0.784314 0.784314 0.784314
-Ke 0 0 0
-Ka 1 1 1
-Ks 0 0 0
-Ns 400
-Tr 0
-d 1
-Ni 1
-Tf 1 1 1
-map_Kd books/4.jpg
-map_Ks books/books_refl_mask.png
-
-newmtl 5
-Kd 0.784314 0.784314 0.784314
-Ke 0 0 0
-Ka 1 1 1
-Ks 0 0 0
-Ns 400
-Tr 0
-d 1
-Ni 1
-Tf 1 1 1
-map_Kd books/5.jpg
-map_Ks books/books_refl_mask.png
-
-newmtl 6
-Kd 0.784314 0.784314 0.784314
-Ke 0 0 0
-Ka 1 1 1
-Ks 0 0 0
-Ns 400
-Tr 0
-d 1
-Ni 1
-Tf 1 1 1
-map_Kd books/6.jpg
-map_Ks books/books_refl_mask.png
-
-newmtl 7
-Kd 0.784314 0.784314 0.784314
-Ke 0 0 0
-Ka 1 1 1
-Ks 0 0 0
-Ns 400
-Tr 0
-d 1
-Ni 1
-Tf 1 1 1
-map_Kd books/7.jpg
-map_Ks books/books_refl_mask.png
-
-newmtl 8
-Kd 0.784314 0.784314 0.784314
-Ke 0 0 0
-Ka 1 1 1
-Ks 0 0 0
-Ns 400
-Tr 0
-d 1
-Ni 1
-Tf 1 1 1
-map_Kd books/8.jpg
-map_Ks books/books_refl_mask.png
-
-newmtl 9
-Kd 0.784314 0.784314 0.784314
-Ke 0 0 0
-Ka 1 1 1
-Ks 0 0 0
-Ns 400
-Tr 0
-d 1
-Ni 1
-Tf 1 1 1
-map_Kd books/9.jpg
-map_Ks books/books_refl_mask.png
-
+newmtl blinn1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd 1.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+newmtl blinn2SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd 2.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+newmtl blinn3SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd 3.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+newmtl blinn4SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd 5.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+newmtl blinn5SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd 7.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+newmtl blinn6SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd 8.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+newmtl blinn7SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd 8.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+newmtl blinn8SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd 10.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+newmtl blinn9SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd 12.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+newmtl blinn10SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd 14.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50
+newmtl blinn11SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd 15.jpg
+Ni 1.00
+Ks 0.50 0.50 0.50

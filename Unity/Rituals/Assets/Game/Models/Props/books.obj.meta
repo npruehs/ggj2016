@@ -16,6 +16,7 @@ ModelImporter:
     100016: 8
     100018: 9
     100020: //RootNode
+    100022: books:Mesh
     400000: 1
     400002: 10
     400004: 2
@@ -27,6 +28,7 @@ ModelImporter:
     400016: 8
     400018: 9
     400020: //RootNode
+    400022: books:Mesh
     2300000: 1
     2300002: 10
     2300004: 2
@@ -37,6 +39,7 @@ ModelImporter:
     2300014: 7
     2300016: 8
     2300018: 9
+    2300020: books:Mesh
     3300000: 1
     3300002: 10
     3300004: 2
@@ -47,6 +50,7 @@ ModelImporter:
     3300014: 7
     3300016: 8
     3300018: 9
+    3300020: books:Mesh
     4300000: 1
     4300002: 10
     4300004: 2
@@ -57,6 +61,7 @@ ModelImporter:
     4300014: 7
     4300016: 8
     4300018: 9
+    4300020: books:Mesh
   materials:
     importMaterials: 1
     materialName: 0
