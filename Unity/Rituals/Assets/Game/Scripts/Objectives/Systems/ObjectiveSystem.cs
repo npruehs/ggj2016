@@ -208,6 +208,7 @@ namespace Rituals.Objectives.Systems
                 if (teleportOnActive != null)
                 {
                     this.Player.transform.position = teleportOnActive.Destination.transform.position;
+                    this.LevelSettings.PlayerSpeed = teleportOnActive.NewPlayerSpeed;
                 }
             }
             else if (objective.State == ObjectiveState.Complete)
@@ -216,6 +217,7 @@ namespace Rituals.Objectives.Systems
                 if (teleportOnComplete != null)
                 {
                     this.Player.transform.position = teleportOnComplete.Destination.transform.position;
+                    this.LevelSettings.PlayerSpeed = teleportOnComplete.NewPlayerSpeed;
                 }
             }
 

@@ -14,6 +14,8 @@ namespace Rituals.Objectives.Components
 
         public GameObject Destination;
 
+        public float NewPlayerSpeed;
+
         #endregion
     }
 }
