@@ -87,6 +87,11 @@ namespace Rituals.Objectives.Systems
                 return;
             }
 
+            if (this.LevelSettings.Obstacles.Any(o => o.Obstacle == args.GameObject))
+            {
+                return;
+            }
+
             if (this.remainingObstacles > 0)
             {
                 this.EventManager.OnError(this, new ErrorEventArgs { ErrorMessage = "You need to remove all obstacles first!" });

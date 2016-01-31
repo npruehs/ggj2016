@@ -14,6 +14,7 @@ namespace Rituals.Interaction.Systems
     using Rituals.Interaction.Components;
     using Rituals.Interaction.Events;
     using Rituals.Objectives.Events;
+    using Rituals.Obstacles.Events;
     using Rituals.Physics.Events;
 
     using UnityEngine;
@@ -24,9 +25,9 @@ namespace Rituals.Interaction.Systems
 
         private readonly List<InteractableComponent> interactablesInRange = new List<InteractableComponent>();
 
-        private InteractableComponent selectedInteractable;
-
         private GameObject currentObjective;
+
+        private InteractableComponent selectedInteractable;
 
         #endregion
 
@@ -40,6 +41,7 @@ namespace Rituals.Interaction.Systems
             this.EventManager.CollisionEntered += this.OnCollisionEntered;
             this.EventManager.CollisionExited += this.OnCollisionExited;
             this.EventManager.CurrentObjectiveChanged += this.OnCurrentObjectiveChanged;
+            this.EventManager.ObstaclesChanged += this.OnObstaclesChanged;
         }
 
         protected override void RemoveListeners()
@@ -50,6 +52,7 @@ namespace Rituals.Interaction.Systems
             this.EventManager.CollisionEntered -= this.OnCollisionEntered;
             this.EventManager.CollisionExited -= this.OnCollisionExited;
             this.EventManager.CurrentObjectiveChanged -= this.OnCurrentObjectiveChanged;
+            this.EventManager.ObstaclesChanged -= this.OnObstaclesChanged;
         }
 
         private void OnCollisionEntered(object sender, CollisionEventArgs args)
@@ -124,12 +127,17 @@ namespace Rituals.Interaction.Systems
             this.UseInteractable();
         }
 
+        private void OnObstaclesChanged(object sender, ObstaclesChangedEventArgs args)
+        {
+            this.SelectInteractable();
+        }
+
         private void SelectInteractable()
         {
             // Prefer obstacles.
             var interactable =
                 this.interactablesInRange.FirstOrDefault(
-                    i => i != null && this.LevelSettings.Obstacles.Any(o => o.Obstacle == i.gameObject));
+                    i => i != null && i.Enabled && this.LevelSettings.Obstacles.Any(o => o.Obstacle == i.gameObject));
 
             // Then, prefer current objective.
             if (interactable == null)
@@ -142,8 +150,7 @@ namespace Rituals.Interaction.Systems
             // Then, pick any.
             if (interactable == null)
             {
-                interactable =
-                    this.interactablesInRange.FirstOrDefault(i => i.Enabled);
+                interactable = this.interactablesInRange.FirstOrDefault(i => i.Enabled);
             }
 
             this.selectedInteractable = interactable;
