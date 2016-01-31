@@ -126,11 +126,20 @@ namespace Rituals.Interaction.Systems
 
         private void SelectInteractable()
         {
-            // Prefer current objective.
+            // Prefer obstacles.
             var interactable =
                 this.interactablesInRange.FirstOrDefault(
-                    i => i != null && i.Enabled && i.gameObject == this.currentObjective);
+                    i => i != null && this.LevelSettings.Obstacles.Any(o => o.Obstacle == i.gameObject));
 
+            // Then, prefer current objective.
+            if (interactable == null)
+            {
+                interactable =
+                    this.interactablesInRange.FirstOrDefault(
+                        i => i != null && i.Enabled && i.gameObject == this.currentObjective);
+            }
+
+            // Then, pick any.
             if (interactable == null)
             {
                 interactable =
