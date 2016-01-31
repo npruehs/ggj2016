@@ -14,6 +14,7 @@ namespace Rituals.Objectives.Systems
     using Rituals.Interaction.Components;
     using Rituals.Interaction.Events;
     using Rituals.Interaction.Util;
+    using Rituals.Objectives.Components;
     using Rituals.Objectives.Data;
     using Rituals.Objectives.Events;
     using Rituals.Obstacles.Events;
@@ -199,6 +200,24 @@ namespace Rituals.Objectives.Systems
             }
 
             objective.State = state;
+
+            // Apply events.
+            if (objective.State == ObjectiveState.Active)
+            {
+                var teleportOnActive = objective.GameObject.GetComponent<TeleportOnActiveComponent>();
+                if (teleportOnActive != null)
+                {
+                    this.Player.transform.position = teleportOnActive.Destination.transform.position;
+                }
+            }
+            else if (objective.State == ObjectiveState.Complete)
+            {
+                var teleportOnComplete = objective.GameObject.GetComponent<TeleportOnCompleteComponent>();
+                if (teleportOnComplete != null)
+                {
+                    this.Player.transform.position = teleportOnComplete.Destination.transform.position;
+                }
+            }
 
             if (objective.State == ObjectiveState.Active)
             {
